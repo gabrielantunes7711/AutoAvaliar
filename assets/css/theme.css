@@ -1,0 +1,585 @@
+/* ------- Fonts ------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Thin.woff2") format("woff2"),
+    url("../fonts/Montserrat-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"),
+    url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"),
+    url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+    url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Black.woff2") format("woff2"),
+    url("../fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------- Root ------- */
+:root {
+  --primary-font: "Montserrat", sans-serif;
+  --primary-font-color: #181717;
+  --secondary-font-color: #7f7c79;
+
+  --primary-color: #f58220;
+
+  --primary-gradient: linear-gradient(90deg, #f58220 0%, #3c00ff 100%);
+
+  --primary-background-color: #f7f8fa;
+
+  --transition: all ease 300ms;
+
+  font-size: 62.5%;
+}
+
+/* ------- General ------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--primary-font-color);
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+@media (max-width: 1280px) {
+  body {
+    margin-top: 6.4rem;
+  }
+}
+svg {
+  pointer-events: none;
+}
+button {
+  font-family: var(--primary-font);
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------- Helpers ------- */
+.row {
+  display: flex;
+}
+.cover {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.hidden {
+  display: none !important;
+}
+
+/* ------- Btn ------- */
+.btn {
+  display: block;
+  padding: 1.05rem 1.6rem;
+  color: white;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+}
+.btn:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.btn.btn-secondary {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.btn.btn-secondary:hover {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+/* ------- Animations ------- */
+/* ------- Loading ------- */
+
+/* ------- Grid ------- */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* ------- Main Header General ------- */
+.menu-mobile-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--primary-font-color);
+  margin: 3.3rem 0 4.6rem;
+}
+.menu-mobile-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+.menu-mobile-search input::placeholder,
+.menu-mobile-search input {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+}
+
+/* ------- Mobile Header ------- */
+@media (max-width: 768px) {
+  .brand-desktop {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .brand-mobile {
+    display: none;
+  }
+}
+@media (max-width: 1280px) {
+  .main-header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+  .main-header .row > a {
+    position: relative;
+    z-index: 10;
+  }
+  .main-header .row {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-header .container {
+    max-width: none;
+    padding-right: 0;
+  }
+  .main-header .right {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  .main-header .right > a {
+    position: relative;
+    z-index: 10;
+  }
+  .main-header .container-menu-mobile {
+    position: fixed;
+    transform: translateX(-100%);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 6.4rem 3.2rem 5.5rem;
+    transition: var(--transition);
+    display: none;
+    visibility: hidden;
+  }
+  .main-header .container-menu-mobile.open {
+    visibility: visible;
+    display: block;
+    transform: translateX(0);
+  }
+  .menu-mobile-search button {
+    display: none;
+  }
+  .main-header nav {
+    height: 70vh;
+    overflow: auto;
+    padding-bottom: 8rem;
+  }
+  .main-header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    list-style: none;
+  }
+  .main-header .menu-item-has-children {
+    pointer-events: fill;
+  }
+  .main-header nav > ul > li:has(.open) > a {
+    color: var(--primary-color);
+  }
+  .main-header nav > ul > li > a {
+    padding-block: 1.4rem;
+    line-height: 2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-header nav .menu-item-has-children > a::after {
+    content: "";
+    width: 4.8rem;
+    height: 2rem;
+    background-image: url(../img/icon-plus-black.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .main-header nav .menu-item-has-children:has(.open) > a::after {
+    background-image: url(../img/icon-minus-orange.svg);
+  }
+  .main-header nav .sub-menu {
+    overflow: hidden;
+    height: 0;
+    transition: var(--transition);
+  }
+  .main-header nav .sub-menu.open {
+    margin-top: 2.4rem;
+  }
+  .main-header nav .sub-menu a {
+    font-weight: 400;
+    line-height: 2.4rem;
+    color: var(--secondary-font-color);
+  }
+  .mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.4rem;
+    height: 6.4rem;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: var(--transition);
+    position: relative;
+    z-index: 10;
+  }
+  .mobile-btn:hover {
+    background-color: transparent;
+  }
+  .container-hamburger-line {
+    position: relative;
+    width: 2.64rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-end;
+  }
+  .mobile-btn .hamburger-line {
+    width: 100%;
+    height: 0.3rem;
+    background-color: white;
+    transition: var(--transition);
+  }
+  .mobile-btn .hamburger-line:nth-of-type(2) {
+    width: 1.8rem;
+    align-self: flex-end;
+  }
+  .mobile-btn:hover .hamburger-line {
+    background-color: var(--primary-color);
+    width: 1.8rem;
+  }
+  .mobile-btn:hover .hamburger-line:nth-of-type(2) {
+    width: 100%;
+  }
+  .mobile-btn.open .container-hamburger-line {
+    width: 3.4rem;
+  }
+  .mobile-btn.open .hamburger-line {
+    width: 100%;
+    height: 0.2rem;
+  }
+  .mobile-btn.open .hamburger-line:nth-of-type(1) {
+    transform: rotate(135deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .mobile-btn.open .hamburger-line:nth-of-type(2) {
+    width: 0;
+  }
+  .mobile-btn.open .hamburger-line:nth-of-type(3) {
+    transform: rotate(-135deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .main-header .call-menu-search {
+    display: none;
+  }
+}
+/* ------- Desktop Header ------- */
+
+@media (min-width: 1281px) {
+  .menu-mobile-search {
+    position: absolute;
+    transform: translate(150%, -50%);
+    left: 0;
+    top: 50%;
+    margin: 0;
+    padding: 0 0 0.7rem;
+    background-color: white;
+    width: calc(100% - 9rem);
+    z-index: 10;
+    transition: var(--transition);
+  }
+  .menu-mobile-search.open {
+    transform: translate(0, -50%);
+  }
+  .menu-mobile-search img {
+    order: -1;
+    pointer-events: none;
+  }
+  .main-header .row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-header .right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .main-header .right > a {
+    color: white;
+    background-color: var(--primary-color);
+  }
+  .main-header .right > a:hover {
+    color: var(--primary-color);
+    background-color: white;
+  }
+  .main-header .call-menu-search {
+    background-color: transparent;
+    width: 4rem;
+    height: 4rem;
+  }
+  .main-header .call-menu-search img:nth-of-type(2) {
+    display: none;
+  }
+  .main-header .call-menu-search.open img:nth-of-type(1) {
+    display: none;
+  }
+  .main-header .call-menu-search.open img:nth-of-type(2) {
+    display: block;
+  }
+  .main-header .container-menu-mobile > nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 2.6rem;
+  }
+  .main-header .container-menu-mobile > nav > ul > li {
+    padding-block: 3rem;
+    position: relative;
+  }
+  .main-header .container-menu-mobile > nav > ul > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .main-header .sub-menu a::before,
+  .main-header .container-menu-mobile > nav > ul > li > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: -0.5rem;
+    height: 0.2rem;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+  }
+  .main-header
+    .container-menu-mobile
+    > nav
+    > ul
+    > .menu-item-has-children
+    > a::before {
+    width: 0;
+  }
+  .main-header .sub-menu a:hover::before,
+  .main-header .container-menu-mobile > nav > ul > li:hover > a::before {
+    width: 100%;
+  }
+  .main-header
+    .container-menu-mobile
+    > nav
+    > ul
+    > .menu-item-has-children:hover
+    > a::before {
+    width: calc(100% - 2.5rem);
+  }
+  .main-header nav .menu-item-has-children > a::after {
+    content: "";
+    width: 1.7rem;
+    height: 1.5rem;
+    background-image: url(../img/icon-chevron-down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    transition: var(--transition);
+  }
+  .main-header nav .menu-item-has-children:hover > a::after {
+    transform: rotate(-180deg);
+  }
+  .main-header .sub-menu {
+    position: absolute;
+    transform: translateY(100%);
+    bottom: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    list-style: none;
+    padding: 2.7rem 0;
+    background-color: white;
+    min-width: 29.4rem;
+  }
+  .main-header nav .menu-item-has-children:hover .sub-menu {
+    width: 29.4rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main-header nav .menu-item-has-children:hover .sub-menu li:not(.destacado) {
+    padding-inline: 3.2rem;
+  }
+  .main-header nav > ul li:last-child ul {
+    left: auto;
+    right: 0;
+  }
+  .main-header .sub-menu.two-columns {
+    min-width: 58.8rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main-header .sub-menu.two-columns > * {
+    width: 50%;
+  }
+  .main-header .sub-menu .destacado {
+    order: 20;
+    padding-left: 0;
+    width: 100%;
+  }
+  .main-header .destacado a {
+    padding: 1.8rem 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    color: var(--primary-color);
+    background-color: var(--primary-background-color);
+    transition: var(--transition);
+    display: block;
+  }
+  .main-header .destacado a::before {
+    display: none;
+  }
+  .main-header .destacado a:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  .main-header .sub-menu a {
+    position: relative;
+  }
+}
