@@ -14,12 +14,8 @@
 
   <?php get_template_part("parts/slide-hero"); ?>
 
-  <section class="for-who">
-    <h2>Para quem</h2>
-    
-    <p>Nam vel ultricies ligula. Integer dignissim laoreet libero, eget iaculis enim tincidunt vel.</p>
-  </section>
-  
+  <?php get_template_part("parts/interested-section"); ?>
+
   <?php wp_footer(); ?>
 </body>
 </html>

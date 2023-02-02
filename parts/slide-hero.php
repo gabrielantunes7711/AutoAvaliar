@@ -24,11 +24,11 @@ $slide = get_field('slide');
       </div>
       <div class="container">
         <div class='slider-btn btn-prev'>
-          <?php get_icon('arrow-left'); ?>
+          <?php get_icon('chevron-left'); ?>
         </div>
 
         <div class='slider-btn btn-next'>
-          <?php get_icon('arrow-right'); ?>
+          <?php get_icon('chevron-right'); ?>
         </div>
       </div>
     </div>

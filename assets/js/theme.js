@@ -1,15 +1,46 @@
 /* ------- General ------- */
 const swiperHero = new Swiper(".slide-hero", {
+  loop: true,
+  speed: 500,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".swiper-pagination",
   },
-
   navigation: {
     nextEl: ".btn-next",
     prevEl: ".btn-prev",
   },
 });
 
+const forWhoItems = document.querySelectorAll(".for-who-infos ul li a");
+const forWhoCards = document.querySelectorAll(".for-who-card");
+
+for (const item of forWhoItems) {
+  item.addEventListener("click", (event) => {
+    event.preventDefault();
+    const el = event.target;
+    const itemId = el.getAttribute("href").replace("#", "");
+
+    for (const item of forWhoItems) {
+      if (el !== item) {
+        item.classList.remove("selected");
+      } else {
+        el.classList.add("selected");
+      }
+    }
+
+    for (const card of forWhoCards) {
+      if (card.id === itemId) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    }
+  });
+}
 /* ------- Mobile ------- */
 let screen = window.innerWidth;
 
