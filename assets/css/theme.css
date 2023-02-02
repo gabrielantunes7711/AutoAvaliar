@@ -133,7 +133,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+figure {
+  margin: 0;
+}
 /* ------- Helpers ------- */
 .row {
   display: flex;
@@ -648,5 +650,165 @@ a {
     line-height: 2.9rem;
     color: #f4efef;
     max-width: 24rem;
+  }
+}
+
+/* ------- For Who ------- */
+.for-who {
+  padding: 6.1rem 0;
+}
+.for-who h2 {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3.7rem;
+  margin-bottom: 1rem;
+}
+.for-who .container > p {
+  color: var(--secondary-font-color);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  width: 100%;
+  max-width: 43.3rem;
+}
+.for-who-infos {
+  margin-top: 6rem;
+  display: flex;
+  gap: 4.8rem;
+}
+.for-who-infos .left {
+  display: flex;
+  flex-direction: column;
+  gap: 5.3rem;
+  width: 100%;
+  max-width: 36.1rem;
+  height: 42.7rem;
+  overflow: auto;
+  list-style: none;
+}
+.for-who-infos .left h3 {
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  max-width: min-content;
+  pointer-events: none;
+}
+.for-who-infos .info-choice {
+  display: flex;
+  gap: 2.1rem;
+  align-items: center;
+  opacity: 0.7;
+}
+.for-who-infos .info-choice.selected {
+  opacity: 1;
+}
+.for-who-infos .info-choice .container-icon {
+  display: flex;
+  align-items: center;
+  width: 5.6rem;
+  height: 5.6rem;
+}
+.for-who-infos .left::-webkit-scrollbar {
+  width: 0.2rem;
+}
+.for-who-infos .left::-webkit-scrollbar-track {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(127, 124, 121, 1) 50%
+  );
+}
+.for-who-infos .left::-webkit-scrollbar-thumb {
+  background-color: #181717;
+}
+.for-who-infos .for-who-card {
+  display: none;
+  gap: 3.2rem;
+  height: 100%;
+}
+.for-who-infos .for-who-card:first-child {
+  display: flex;
+}
+.for-who-infos .right figure {
+  height: 42.8rem;
+  width: 100%;
+  max-width: 35.1rem;
+  flex-shrink: 0;
+}
+.for-who-infos .right .info-text {
+  padding: 4.3rem 0;
+}
+.for-who-infos .right .info-text p {
+  font-size: 2.3rem;
+  line-height: 2.8rem;
+}
+.for-who-infos .right .info-text p strong {
+  font-weight: 600;
+}
+.for-who-infos .right .info-text a {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  width: max-content;
+  margin-top: 2rem;
+  padding: 1.65rem 1.8rem;
+}
+@media (max-width: 1024px) {
+  .for-who h2 {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+  .for-who .container > p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+  .for-who-infos {
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-top: 2.4rem;
+  }
+  .for-who-infos .left {
+    flex-direction: row;
+    max-width: initial;
+    height: auto;
+    padding-bottom: 2.4rem;
+  }
+  .for-who-infos .left::-webkit-scrollbar {
+    height: 0.2rem;
+  }
+  .for-who-infos .left::-webkit-scrollbar-track {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(127, 124, 121, 1) 50%
+    );
+  }
+  .for-who-infos .left h3 {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+  .for-who-infos .info-choice {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .for-who-infos .for-who-card {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  .for-who-infos .right figure {
+    height: 25.7rem;
+    max-width: initial;
+  }
+  .for-who-infos .right .info-text {
+    padding: 0;
+  }
+  .for-who-infos .right .info-text p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+}
+@media (max-width: 640px) {
+  .for-who-infos .right figure {
+    height: 13.7rem;
   }
 }
