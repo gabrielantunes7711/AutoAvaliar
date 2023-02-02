@@ -115,7 +115,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
   body {
     margin-top: 6.4rem;
   }
@@ -142,8 +142,7 @@ a {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: auto;
-  vertical-align: bottom;
+  height: 100%;
 }
 .hidden {
   display: none !important;
@@ -198,14 +197,14 @@ a {
     max-width: 1024px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1366px) {
   .container {
-    max-width: 1280px;
+    max-width: 1160px;
   }
 }
-@media (min-width: 1536px) {
+@media (min-width: 1440px) {
   .container {
-    max-width: 1536px;
+    max-width: 1220px;
   }
 }
 
@@ -244,11 +243,13 @@ a {
     display: none;
   }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
   .main-header {
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 50;
+    background-color: white;
   }
   .main-header .row > a {
     position: relative;
@@ -260,7 +261,6 @@ a {
   }
   .main-header .container {
     max-width: none;
-    padding-right: 0;
   }
   .main-header .right {
     display: flex;
@@ -282,6 +282,7 @@ a {
     transition: var(--transition);
     display: none;
     visibility: hidden;
+    background-color: white;
   }
   .main-header .container-menu-mobile.open {
     visibility: visible;
@@ -407,8 +408,12 @@ a {
   }
 }
 /* ------- Desktop Header ------- */
-
-@media (min-width: 1281px) {
+@media (min-width: 1367px) {
+  .main-header {
+    background-color: white;
+    position: relative;
+    z-index: 10;
+  }
   .menu-mobile-search {
     position: absolute;
     transform: translate(150%, -50%);
@@ -417,7 +422,7 @@ a {
     margin: 0;
     padding: 0 0 0.7rem;
     background-color: white;
-    width: calc(100% - 9rem);
+    width: calc(100% - 7rem);
     z-index: 10;
     transition: var(--transition);
   }
@@ -449,8 +454,6 @@ a {
   }
   .main-header .call-menu-search {
     background-color: transparent;
-    width: 4rem;
-    height: 4rem;
   }
   .main-header .call-menu-search img:nth-of-type(2) {
     display: none;
@@ -532,7 +535,7 @@ a {
     flex-direction: column;
     row-gap: 1.5rem;
     list-style: none;
-    padding: 2.7rem 0;
+    padding-top: 2.7rem;
     background-color: white;
     min-width: 29.4rem;
   }
@@ -581,5 +584,69 @@ a {
   }
   .main-header .sub-menu a {
     position: relative;
+  }
+}
+
+/* ------- Slider Hero ------- */
+.hero-banner {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 11.9rem;
+  position: relative;
+  height: 56.2rem;
+}
+.hero-banner figure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.hero-banner h2 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 48.7rem;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 6.2rem;
+  color: white;
+}
+.hero .slide-hero > .container {
+  position: absolute;
+  bottom: 3.7rem;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+.hero .slide-hero > .container .slider-btn:last-child {
+  border-left: none;
+}
+.slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  border: 0.1rem solid white;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.slider-btn:hover {
+  opacity: 0.6;
+}
+@media (max-width: 1024px) {
+  .hero-banner {
+    height: 48rem;
+  }
+  .hero-banner h2 {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    color: #f4efef;
+    max-width: 24rem;
   }
 }

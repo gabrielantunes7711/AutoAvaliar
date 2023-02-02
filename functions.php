@@ -25,3 +25,11 @@ if( function_exists('acf_add_options_page') ) {
     ));
     
 }
+
+function get_img($filename){
+	return get_bloginfo('template_url')."/assets/img/{$filename}";
+}
+
+function get_icon($iconname){
+	get_template_part("/assets/icons/{$iconname}");
+}

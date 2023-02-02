@@ -10,17 +10,16 @@
   <?php wp_head(); ?>
 </head>
 <body>
-  <?php require 'header.php'; ?>
+  <?php get_header(); ?>
 
-  <section class="hero">
-    <div class="hero-banner">
-      <figure>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-banner1.png" alt="">
-      </figure>
+  <?php get_template_part("parts/slide-hero"); ?>
 
-      <h2>1 em 4 veículos são comercializados pela Auto Avaliar</h2>
-    </div>
+  <section class="for-who">
+    <h2>Para quem</h2>
+    
+    <p>Nam vel ultricies ligula. Integer dignissim laoreet libero, eget iaculis enim tincidunt vel.</p>
   </section>
+  
   <?php wp_footer(); ?>
 </body>
 </html>
