@@ -1,12 +1,12 @@
 /* ------- General ------- */
-const swiper = new Swiper(".swiper", {
+const swiperHero = new Swiper(".slide-hero", {
   pagination: {
     el: ".swiper-pagination",
   },
 
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev",
   },
 });
 
@@ -37,7 +37,7 @@ for (let item of menuMobileItems) {
       ".container-menu-mobile .open"
     );
     let submenuHeight = 0;
-    if ((el.tagName = "a" && screen <= 1280)) {
+    if ((el.tagName = "a" && screen <= 1366)) {
       evt.preventDefault();
 
       console.log(el);
@@ -68,7 +68,7 @@ for (let item of menuMobileItems) {
 const allSubmenu = document.querySelectorAll(".main-header .sub-menu");
 
 function mainMenuColumns() {
-  if (screen > 1280) {
+  if (screen > 1366) {
     for (const submenu of allSubmenu) {
       const columns = Math.ceil((submenu.children.length - 1) / 4);
       if (columns > 1) {
