@@ -12,17 +12,19 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
 add_theme_support('menus');
 
-add_theme_support('html5');
+add_theme_support('html5', ['gallery','caption']);
 
-if( function_exists('acf_add_options_page') ) {
+add_theme_support('post-thumbnails');
+
+if(function_exists('acf_add_options_page')) {
     
-    acf_add_options_page(array(
+    acf_add_options_page([
         'page_title'    => 'Opções',
         'menu_title'    => 'Opções',
         'menu_slug'     => 'options',
         'capability'    => 'edit_posts',
         'redirect'      => false
-    ));
+    ]);
     
 }
 

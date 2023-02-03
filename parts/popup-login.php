@@ -1,4 +1,4 @@
-<div class="popup-login">
+<div class="popup-login close">
     <span class="close-btn">
       <?php get_icon('close') ?>
     </span>

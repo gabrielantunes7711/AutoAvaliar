@@ -11,9 +11,16 @@ const swiperHero = new Swiper(".slide-hero", {
     delay: 5000,
     disableOnInteraction: false,
   },
-  pagination: {
-    el: ".swiper-pagination",
+  navigation: {
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev",
   },
+});
+
+const swiperSolutions = new Swiper(".slide-solutions", {
+  slidesPerView: "auto",
+  spaceBetween: 31,
+  freeMode: true,
   navigation: {
     nextEl: ".btn-next",
     prevEl: ".btn-prev",

@@ -18,6 +18,8 @@
 
   <?php get_template_part("parts/interested-section"); ?>
 
+  <?php get_template_part("parts/solutions-section"); ?>
+
   <?php wp_footer(); ?>
 </body>
 </html>
