@@ -42,6 +42,16 @@ const swiperPartners = new Swiper(".slide-partners", {
   },
 });
 
+function hideScrollbar() {
+  if (document.body.parentNode.style.overflow === "hidden") {
+    document.body.parentNode.style.overflow = null;
+    document.body.parentNode.style.paddingRight = null;
+  } else {
+    document.body.parentNode.style.overflow = "hidden";
+    document.body.parentNode.style.paddingRight = "1.8rem";
+  }
+}
+
 const forWhoItems = document.querySelectorAll(".for-who-infos ul li a");
 const forWhoCards = document.querySelectorAll(".for-who-card");
 
@@ -106,6 +116,25 @@ function closeLoginAccess(el) {
     : (loginAccessBtn.querySelector("svg").style.transform = null);
 }
 
+const closeVideoModalBtn = document.querySelector(
+  ".section-video .container-video .container-close-btn"
+);
+const videoModal = document.querySelector(".section-video .container-video");
+const videoPlayBtn = document.querySelector(
+  ".section-video .container-thumbnail .container-play"
+);
+
+videoPlayBtn.addEventListener("click", closeVideoModal);
+closeVideoModalBtn.addEventListener("click", closeVideoModal);
+videoModal.addEventListener("click", closeVideoModal);
+
+function closeVideoModal(event) {
+  event.stopPropagation();
+
+  hideScrollbar();
+
+  videoModal.classList.toggle("open");
+}
 /* ------- Mobile ------- */
 let screen = window.innerWidth;
 

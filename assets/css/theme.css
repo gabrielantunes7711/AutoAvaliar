@@ -1203,3 +1203,119 @@ figure {
     max-width: 20.6rem;
   }
 }
+
+/* ------- Section Video ------- */
+.section-video {
+  padding: 6.4rem 0;
+}
+.section-video .container-thumbnail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 7.3rem 10rem;
+  height: 71.2rem;
+}
+.section-video .container-thumbnail .container-play {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.1rem;
+  height: 6.1rem;
+  background-color: white;
+  border-radius: 50%;
+  padding-left: 0.7rem;
+  cursor: pointer;
+}
+.section-video .container-thumbnail figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.section-video .container-thumbnail h2 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3.7rem;
+  max-width: 34.3rem;
+  color: white;
+}
+.section-video .container-thumbnail p {
+  font-weight: 500;
+  font-size: 2.3rem;
+  line-height: 2.8rem;
+  max-width: 43.3rem;
+  margin: 1.5rem 0 3.3rem;
+  color: white;
+}
+.section-video .container-thumbnail a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--primary-color);
+}
+.section-video .container-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(25, 25, 24, 0.8);
+  z-index: 99;
+}
+.section-video .container-video.open {
+  display: flex;
+  visibility: visible;
+}
+.section-video .container-video svg {
+  color: white;
+  scale: 2.5;
+}
+.section-video .container-video .container-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .section-video .container {
+    max-width: none;
+    padding: 0;
+  }
+  .section-video .container-thumbnail {
+    height: 23.2rem;
+    padding: 0 0 2.5rem 2.3rem;
+  }
+  .section-video .container-thumbnail .container-play {
+    width: 3.2rem;
+    height: 3.2rem;
+    padding-left: 0.35rem;
+  }
+  .section-video .container-thumbnail .container-play svg {
+    scale: 0.5;
+  }
+  .section-video .container-thumbnail h2 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+  .section-video .container-thumbnail p {
+    display: none;
+  }
+  .section-video .container-thumbnail a {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-top: 0.8rem;
+  }
+}
