@@ -27,6 +27,21 @@ const swiperSolutions = new Swiper(".slide-solutions", {
   },
 });
 
+const swiperPartners = new Swiper(".slide-partners", {
+  slidesPerView: 1,
+  spaceBetween: 100,
+  loop: true,
+  breakpoints: {
+    500: {
+      slidesPerView: "auto",
+    },
+  },
+  navigation: {
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev",
+  },
+});
+
 const forWhoItems = document.querySelectorAll(".for-who-infos ul li a");
 const forWhoCards = document.querySelectorAll(".for-who-card");
 
