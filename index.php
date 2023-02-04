@@ -22,6 +22,8 @@
 
   <?php get_template_part("parts/partners-section"); ?>
 
+  <?php get_template_part("parts/video-section"); ?>
+
   <?php wp_footer(); ?>
 </body>
 </html>
