@@ -41,11 +41,11 @@
             <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
         <div class="container">
-        <div class='slider-btn btn-prev'>
+        <div class='slider-btn slider-btn-secondary btn-prev'>
           <?php get_icon('chevron-left'); ?>
         </div>
 
-        <div class='slider-btn btn-next'>
+        <div class='slider-btn slider-btn-secondary btn-next'>
           <?php get_icon('chevron-right'); ?>
         </div>
       </div>
