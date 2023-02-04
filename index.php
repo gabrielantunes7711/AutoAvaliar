@@ -24,6 +24,8 @@
 
   <?php get_template_part("parts/video-section"); ?>
 
+  <?php get_template_part("parts/evaluation-section"); ?>
+
   <?php wp_footer(); ?>
 </body>
 </html>
