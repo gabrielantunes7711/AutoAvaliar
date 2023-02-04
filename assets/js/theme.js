@@ -42,6 +42,14 @@ const swiperPartners = new Swiper(".slide-partners", {
   },
 });
 
+const swiperEvaluation = new Swiper(".slide-evaluation", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev",
+  },
+});
+
 function hideScrollbar() {
   if (document.body.parentNode.style.overflow === "hidden") {
     document.body.parentNode.style.overflow = null;
