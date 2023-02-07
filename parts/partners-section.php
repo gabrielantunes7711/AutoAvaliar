@@ -19,9 +19,9 @@ $partners = get_field('partners');
                     <div class='swiper-slide'>
                         <a <?php echo $item['partner_link'] ? "href='{$item['partner_link']}'" : ''; ?> target="_blank">
                         
-                        <?php if (!empty($item['partners'])) : ?>
+                        <?php if (!empty($item['partner_image'])) : ?>
                         <figure>
-                            <img src="<?php echo $item['partners']['url']  ?>" alt="<?php echo $item['partners']['alt']  ?>">
+                            <img src="<?php echo $item['partner_image']['url']  ?>" alt="<?php echo $item['partner_image']['alt']  ?>">
                         </figure>
                         <?php endif; ?>
                         </a>

@@ -9,7 +9,7 @@ $register_link = get_field('register_link', 'option');
 <header class="main-header">
     <div class="container">
       <div class="row">
-        <a href="#">
+        <a href="/">
           <?php if (!empty($logo_mobile)): ?>
             <img class="brand-mobile" src="<?php echo $logo_mobile['url'] ?>" alt="<?php echo $logo_mobile['alt'] ?>">
           <?php endif ?>

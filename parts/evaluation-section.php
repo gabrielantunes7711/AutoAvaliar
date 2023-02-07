@@ -1,16 +1,16 @@
 <?php
 
-$evaluation = get_field('evaluation')
+$home_cta = get_field('home_cta')
 
 ?>
 
-<?php if (!empty($evaluation)): ?>
+<?php if (!empty($home_cta)): ?>
 <section class="section-evaluation">
     <div class="container">
         <div class='swiper slide-evaluation'>
             <div class='swiper-wrapper'>
 
-                <?php foreach($evaluation as $item) : ?>
+                <?php foreach($home_cta as $item) : ?>
                 <div class='swiper-slide'>
                     <div class="evaluation-card">
                         <div class="row">
