@@ -50,6 +50,21 @@ const swiperEvaluation = new Swiper(".slide-evaluation", {
   },
 });
 
+const swiperEvents = new Swiper(".slide-events", {
+  slidesPerView: "auto",
+  spaceBetween: 23,
+  freeMode: true,
+});
+
+const swiperNews = new Swiper(".slide-news", {
+  slidesPerView: "auto",
+  spaceBetween: 21,
+  navigation: {
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev",
+  },
+});
+
 function hideScrollbar() {
   if (document.body.parentNode.style.overflow === "hidden") {
     document.body.parentNode.style.overflow = null;
@@ -132,9 +147,11 @@ const videoPlayBtn = document.querySelector(
   ".section-video .container-thumbnail .container-play"
 );
 
-videoPlayBtn.addEventListener("click", closeVideoModal);
-closeVideoModalBtn.addEventListener("click", closeVideoModal);
-videoModal.addEventListener("click", closeVideoModal);
+if (closeVideoModalBtn && videoModal && videoPlayBtn) {
+  videoPlayBtn.addEventListener("click", closeVideoModal);
+  closeVideoModalBtn.addEventListener("click", closeVideoModal);
+  videoModal.addEventListener("click", closeVideoModal);
+}
 
 function closeVideoModal(event) {
   event.stopPropagation();

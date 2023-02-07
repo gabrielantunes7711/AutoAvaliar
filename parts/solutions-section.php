@@ -1,7 +1,18 @@
+<?php
+
+$solutions = get_field("solutions")
+
+?>
+
 <section class="section-solutions">
     <div class="container">
-        <h2>Soluções</h2>
-        <p>Nam vel ultricies ligula. Integer dignissim laoreet libero, eget iaculis enim tincidunt vel.</p>
+        <?php if (!empty($solutions['title'])): ?>
+        <h2><?php echo $solutions['title']; ?></h2>
+        <?php endif; ?>
+
+        <?php if (!empty($solutions['description'])): ?>
+        <p><?php echo $solutions['description']; ?></p>
+        <?php endif; ?>
     </div>
     
     <div class='swiper slide-solutions'>
