@@ -32,6 +32,8 @@
 
   get_template_part("parts/news-section"); 
 
+  get_template_part("parts/download-app-section"); 
+
   wp_footer(); 
   
   ?>
