@@ -34,6 +34,8 @@
 
   get_template_part("parts/download-app-section"); 
 
+  get_footer();
+
   wp_footer(); 
   
   ?>
