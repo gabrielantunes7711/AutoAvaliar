@@ -16,23 +16,23 @@
 
   get_template_part("parts/popup-login"); 
 
-  get_template_part("parts/slide-hero"); 
+  get_template_part("parts/section-hero"); 
 
-  get_template_part("parts/interested-section"); 
+  get_template_part("parts/section-interested"); 
 
-  get_template_part("parts/solutions-section"); 
+  get_template_part("parts/section-solutions"); 
 
-  get_template_part("parts/partners-section"); 
+  get_template_part("parts/section-partners"); 
 
-  get_template_part("parts/video-section"); 
+  get_template_part("parts/section-video"); 
 
-  get_template_part("parts/evaluation-section"); 
+  get_template_part("parts/section-evaluation"); 
 
-  get_template_part("parts/events-section"); 
+  get_template_part("parts/section-events"); 
 
-  get_template_part("parts/news-section"); 
+  get_template_part("parts/section-news"); 
 
-  get_template_part("parts/download-app-section"); 
+  get_template_part("parts/section-download-app"); 
 
   get_footer();
 

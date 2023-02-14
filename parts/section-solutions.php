@@ -43,7 +43,7 @@ $solutions = get_field("solutions")
                         <div class="bottom">
                             <p>Com o marketplace B2B, através de um aplicativo próprio, o avaliador acessa todas as características do veículo para determinar o preço justo.</p>
 
-                            <a href="<?php the_permalink() ?>" class="btn btn-secondary">Conheça mais <?php get_icon('arrow-right') ?></a>
+                            <a href="<?php the_permalink() ?>" class="btn-secondary">Conheça mais <?php get_icon('arrow-right') ?></a>
                         </div>
                     </a>
                 </article>
@@ -52,11 +52,11 @@ $solutions = get_field("solutions")
             <?php endwhile; endif; wp_reset_postdata(); ?>
         </div>
         <div class="container">
-        <div class='slider-btn slider-btn-secondary btn-prev'>
+        <div class='slider-btn-secondary btn-prev'>
           <?php get_icon('chevron-left'); ?>
         </div>
 
-        <div class='slider-btn slider-btn-secondary btn-next'>
+        <div class='slider-btn-secondary btn-next'>
           <?php get_icon('chevron-right'); ?>
         </div>
       </div>

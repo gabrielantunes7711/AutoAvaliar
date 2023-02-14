@@ -1,0 +1,208 @@
+.popup-login {
+  position: fixed;
+  top: 12.7rem;
+  right: 2.3rem;
+  z-index: 80;
+  display: flex;
+  align-items: flex-start;
+  transition: var(--transition);
+
+  @media (max-width: 1024px) {
+    top: auto;
+    right: 0.1rem;
+    bottom: 0.1rem;
+  }
+
+  &.close {
+    right: -32.9rem;
+
+    @media (max-width: 1024px) {
+      bottom: 0;
+      transform: translateY(100%);
+      right: 0.1rem;
+    }
+
+    form {
+      opacity: 0;
+    }
+  }
+
+  & > button {
+    position: absolute;
+    left: -186px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 2.1rem 2.35rem;
+    color: white;
+    background: rgba(24, 23, 23, 0.9);
+    border: 0.05rem solid white;
+    box-shadow: 4px 4px 4px rgba(24, 23, 23, 0.3);
+    transform: rotate(-90deg);
+    transform-origin: 84% 49% 0;
+
+    @media (max-width: 1024px) {
+      transform: translateY(-100%);
+      right: 0;
+      left: auto;
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+  }
+
+  form {
+    width: 100%;
+    max-width: 33rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 4.5rem 5rem 3.2rem;
+    background: rgba(24, 23, 23, 0.9);
+    border: 0.05rem solid white;
+    box-shadow: 4px 4px 4px rgba(24, 23, 23, 0.3);
+    transition: opacity ease 300ms;
+
+    & > span {
+      color: white;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 3.2rem;
+      letter-spacing: -0.06em;
+      margin-bottom: 3rem;
+    }
+
+    .container-input {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2.2rem;
+
+      label {
+        color: white;
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+      }
+
+      input {
+        color: white;
+        width: 100%;
+        border: 1px solid white;
+        padding: 1.3rem 1.6rem;
+        background-color: transparent;
+
+        &::placeholder {
+          color: white;
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: 1.6rem;
+        }
+      }
+
+      &.container-password {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        color: white;
+        column-gap: 0;
+        margin-bottom: 1.3rem;
+
+        label {
+          width: 100%;
+        }
+
+        input {
+          width: 80%;
+          border-right: none;
+          outline: none;
+        }
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20%;
+          border: 1px solid white;
+          border-left: none;
+          align-self: stretch;
+          background-color: transparent;
+          color: white;
+        }
+      }
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 1.6rem;
+
+      .container-checkbox {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0.6rem;
+        align-items: center;
+        justify-self: flex-start;
+
+        label {
+          color: white;
+          font-weight: 500;
+          font-size: 0.9rem;
+          line-height: 1rem;
+        }
+
+        input {
+          appearance: none;
+          border: 0.1rem solid white;
+          height: 1rem;
+          width: 1rem;
+
+          &:checked {
+            background-color: white;
+          }
+        }
+      }
+
+      & > a {
+        color: white;
+        font-weight: 500;
+        font-size: 0.9rem;
+        line-height: 1rem;
+        text-align: center;
+        letter-spacing: -0.01em;
+      }
+
+      span {
+        font-weight: 500;
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+        letter-spacing: -0.01em;
+        color: white;
+        align-self: flex-end;
+
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        padding: 1.4rem 3.55rem;
+      }
+    }
+  }
+}

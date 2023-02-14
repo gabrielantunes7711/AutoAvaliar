@@ -30,11 +30,11 @@ $partners = get_field('partners');
 
                 </div>
                 <div class="container">
-                <div class='slider-btn slider-btn-secondary btn-prev'>
+                <div class='slider-btn-secondary btn-prev'>
                 <?php get_icon('chevron-left'); ?>
                 </div>
 
-                <div class='slider-btn slider-btn-secondary btn-next'>
+                <div class='slider-btn-secondary btn-next'>
                 <?php get_icon('chevron-right'); ?>
             </div>
             </div>

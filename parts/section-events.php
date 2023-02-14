@@ -26,11 +26,11 @@ if ($the_query->have_posts()):
         <div class="row">
             <div class="left">
                 <?php if (!empty($section_events['title'])): ?>
-                <h2 class="section-title"><?php echo $section_events['title']; ?></h2>
+                <h2 ><?php echo $section_events['title']; ?></h2>
                 <?php endif; ?>
 
                 <?php if (!empty($section_events['description'])): ?>
-                <p class="section-description"><?php echo $section_events['description']; ?></p>
+                <p "><?php echo $section_events['description']; ?></p>
                 <?php endif; ?>
             </div>
 
@@ -69,7 +69,7 @@ if ($the_query->have_posts()):
 
                                 <span><?php echo $events['address']; ?></span>
 
-                                <a class="btn btn-secondary" href="<?php the_permalink() ?>">Saiba mais <?php get_icon('arrow-right') ?></a>
+                                <a class="btn-secondary" href="<?php the_permalink() ?>">Saiba mais <?php get_icon('arrow-right') ?></a>
                             </div>
                         </article>
                     </div>

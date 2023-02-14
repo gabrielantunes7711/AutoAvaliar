@@ -1,0 +1,117 @@
+.section-events {
+  padding: 6rem 0;
+  background-color: var(--primary-background-color);
+
+  .row {
+    gap: 4.5rem;
+
+    @media (max-width: 1366px) {
+      flex-direction: column;
+      gap: 2.3rem;
+    }
+  }
+
+  .left {
+    max-width: 21.8rem;
+    padding-right: 3.4rem;
+
+    @media (max-width: 1366px) {
+      max-width: 40rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .slide-events {
+    @media (max-width: 1366px) {
+      margin: 0;
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      width: auto !important;
+    }
+  }
+
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    width: 27.3rem;
+    height: 39.6rem;
+    background-color: var(--primary-color);
+
+    figure {
+      width: 100%;
+      height: 13.9rem;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+
+      img {
+        filter: brightness(90%);
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .bottom {
+      padding: 3rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      color: white;
+      flex: 1;
+
+      h3 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+      }
+
+      span {
+        &:last-of-type {
+          font-size: 1.4rem;
+          line-height: 2.3rem;
+          flex: 1;
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+
+      a {
+        padding: 1.7rem 1.5rem;
+        border-color: white;
+        color: white;
+        margin-top: 2.2rem;
+
+        &:hover {
+          background-color: white;
+          color: var(--primary-color);
+        }
+      }
+
+      .container-date {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 400;
+        font-size: 3rem;
+
+        .day {
+          font-weight: 500;
+          line-height: 3.7rem;
+        }
+
+        .month {
+          font-size: 1.5rem;
+          line-height: 1.9rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
