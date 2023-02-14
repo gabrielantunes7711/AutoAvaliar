@@ -1,0 +1,40 @@
+.swiper {
+  & > .container {
+    display: flex;
+  }
+}
+.slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  border: 0.1rem solid white;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+
+  @media (max-width: 1024px) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:last-child {
+    border-left: none;
+  }
+
+  &-secondary {
+    @extend .slider-btn;
+    color: var(--primary-font-color);
+    background-color: white;
+    border-color: var(--border-color);
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.3 !important;
+}

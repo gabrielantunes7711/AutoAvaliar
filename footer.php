@@ -89,8 +89,6 @@ $instagram = get_field('instagram','options');
 
             wp_nav_menu($args)
             ?>
-            
-            <?php get_icon('base'); ?>
         </div>
     </div>
 </footer>

@@ -57,7 +57,7 @@ $count = 1;
               <?php endif; ?>
             
               <?php if (!empty($item['link'])): ?>
-              <a href="<?php echo $item['link']['url']; ?>" class="btn btn-secondary" target="<?php echo $item['link']['target']; ?>">
+              <a href="<?php echo $item['link']['url']; ?>" class="btn-secondary" target="<?php echo $item['link']['target']; ?>">
                 <?php echo $item['link']['title']; ?>
                 <?php get_icon('arrow-right') ?>
               </a>

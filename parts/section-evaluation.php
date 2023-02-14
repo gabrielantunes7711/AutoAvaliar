@@ -32,7 +32,7 @@ $home_cta = get_field('home_cta')
                                 <?php endif; ?>
 
                                 <?php if (!empty( $item['link']['url'])): ?>
-                                <a href="<?php echo $item['link']['url'] ?>" class="btn btn-secondary" target="<?php echo $item['link']['target'] ?>"><?php echo $item['link']['title'] ?> <?php get_icon('arrow-right'); ?></a>
+                                <a href="<?php echo $item['link']['url'] ?>" class="btn-secondary" target="<?php echo $item['link']['target'] ?>"><?php echo $item['link']['title'] ?> <?php get_icon('arrow-right'); ?></a>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -41,11 +41,11 @@ $home_cta = get_field('home_cta')
                 <?php endforeach; ?>
             </div>
             <div class="container">
-                <div class='slider-btn slider-btn-secondary btn-prev'>
+                <div class='slider-btn-secondary btn-prev'>
                 <?php get_icon('chevron-left'); ?>
                 </div>
 
-                <div class='slider-btn slider-btn-secondary btn-next'>
+                <div class='slider-btn-secondary btn-next'>
                 <?php get_icon('chevron-right'); ?>
                 </div>
             </div>

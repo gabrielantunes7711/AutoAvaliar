@@ -16,11 +16,11 @@ if ($the_query->have_posts()):
 <section class="section-news">
     <div class="container">
         <?php if (!empty($news['title'])): ?>
-        <h2 class="section-title"><?php echo $news['title']; ?></h2>
+        <h2 ><?php echo $news['title']; ?></h2>
         <?php endif; ?>
 
         <?php if (!empty($news['description'])): ?>
-        <p class="section-description"><?php echo $news['description']; ?></p>
+        <p "><?php echo $news['description']; ?></p>
         <?php endif; ?>
 
         <div class='swiper slide-news'>
@@ -53,11 +53,11 @@ if ($the_query->have_posts()):
                 <?php endwhile; ?>
             </div>
             <div class="container">
-                <div class='slider-btn slider-btn-secondary btn-prev'>
+                <div class='slider-btn-secondary btn-prev'>
                 <?php get_icon('chevron-left'); ?>
                 </div>
 
-                <div class='slider-btn slider-btn-secondary btn-next'>
+                <div class='slider-btn-secondary btn-next'>
                 <?php get_icon('chevron-right'); ?>
                 </div>
             </div>

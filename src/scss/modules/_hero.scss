@@ -1,0 +1,51 @@
+.hero {
+  .slide-hero {
+    & > .container {
+      position: absolute;
+      bottom: 3.7rem;
+      transform: translateX(-50%);
+      left: 50%;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .hero-banner {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 11.9rem;
+    position: relative;
+    height: 56.2rem;
+
+    @media (max-width: 1024px) {
+      height: 48rem;
+    }
+
+    figure {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 48.7rem;
+      font-weight: 700;
+      font-size: 4.5rem;
+      line-height: 6.2rem;
+      color: white;
+
+      @media (max-width: 1024px) {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        color: #f4efef;
+        max-width: 24rem;
+      }
+    }
+  }
+}

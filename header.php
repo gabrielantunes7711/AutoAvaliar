@@ -26,7 +26,7 @@ $register_link = get_field('register_link', 'option');
               
               <img src="<?php echo get_template_directory_uri()?>/assets/img/icon-search.svg" alt="Ícone para fazer pesquisa">
 
-              <button type="submit" class="btn btn-secondary">Buscar</button>
+              <button type="submit" class="btn-secondary">Buscar</button>
             </form>
 
               <?php 
@@ -39,7 +39,7 @@ $register_link = get_field('register_link', 'option');
               ?>
           </div>
           <?php if(!empty($register_link)): ?>
-            <a href="<?php echo $register_link['url'] ?>" class="btn btn-secondary" target="<?php echo $register_link['target'] ?>"><?php echo $register_link['title'] ?></a>
+            <a href="<?php echo $register_link['url'] ?>" class="btn-secondary" target="<?php echo $register_link['target'] ?>"><?php echo $register_link['title'] ?></a>
           <?php endif ?>
 
           <button type="button" class="call-menu-search">
