@@ -1,43 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
 
-  <title><?php wp_title(); ?></title>
+$page_404 = get_field('page_404','options');
 
-  <?php wp_head(); ?>
-</head>
-<body>
-  <?php 
-  
-  get_header(); 
+?>
 
-  get_template_part("parts/popup-login"); 
+<?php if (!empty($page_404)): ?>
+<main class="page-404">
+  <?php get_header(); ?>
 
-  get_template_part("parts/section-hero"); 
+  <section class="section-404">
+    <div class="container">
+      <?php if (!empty($page_404['title'])): ?>
+      <h1><?php echo $page_404['title']; ?></h1>
+      <?php endif; ?>
 
-  get_template_part("parts/section-interested"); 
+      <?php if (!empty($page_404['description'])): ?>
+      <p><?php echo $page_404['description']; ?></p>
+      <?php endif; ?>
+    
+      <?php if (!empty($page_404['link'])): ?>
+      <a href="<?php echo $page_404['link']['url']; ?>" class="btn-secondary" target="<?php echo $page_404['link']['target']; ?>"><?php echo $page_404['link']['title']; ?> <?php get_icon("arrow-right"); ?></a>
+      <?php endif; ?>
+    </div>
+  </section>
 
-  get_template_part("parts/section-solutions"); 
-
-  get_template_part("parts/section-partners"); 
-
-  get_template_part("parts/section-video"); 
-
-  get_template_part("parts/section-evaluation"); 
-
-  get_template_part("parts/section-events"); 
-
-  get_template_part("parts/section-news"); 
-
-  get_template_part("parts/section-download-app"); 
-
-  get_footer();
-
-  wp_footer(); 
-  
-  ?>
-</body>
-</html>
+  <?php get_footer(); ?>
+</main>
+<?php endif; ?>
