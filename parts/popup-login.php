@@ -1,14 +1,15 @@
 <div class="popup-login <?php echo (!is_page("home")) ? "close" : "" ?>">
-    <span class="close-btn">
-      <?php get_icon('close') ?>
-    </span>
-
+   
    <button type="button">
     Acesse sua conta
     <?php get_icon('arrow-down') ?>
    </button>
 
    <form action="">
+    <span class="close-btn">
+      <?php get_icon('close') ?>
+    </span>
+
     <span>Acesse sua conta</span>
 
     <div class="container-input">

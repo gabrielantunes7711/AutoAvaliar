@@ -167,7 +167,7 @@ p:not(:last-of-type) {
   display: none !important;
 }
 
-.btn, .btn-secondary {
+.btn, .btn-tertiary, .btn-secondary {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +181,7 @@ p:not(:last-of-type) {
   transition: var(--transition);
   width: max-content;
 }
-.btn:hover, .btn-secondary:hover {
+.btn:hover, .btn-tertiary:hover, .btn-secondary:hover {
   color: var(--primary-color);
   background-color: transparent;
 }
@@ -193,6 +193,16 @@ p:not(:last-of-type) {
 .btn-secondary:hover {
   color: white;
   background-color: var(--primary-color);
+}
+
+.btn-tertiary {
+  color: var(--primary-color);
+  background-color: white;
+  border-color: white;
+}
+.btn-tertiary:hover {
+  background-color: transparent;
+  color: white;
 }
 
 .mobile-btn {
@@ -340,15 +350,16 @@ p:not(:last-of-type) {
   .popup-login {
     top: auto;
     right: 0.1rem;
-    bottom: 0.1rem;
+    bottom: 9rem;
   }
 }
 .popup-login.close {
   right: -32.9rem;
+  z-index: 40;
 }
 @media (max-width: 1024px) {
   .popup-login.close {
-    bottom: 0;
+    bottom: 9rem;
     transform: translateY(100%);
     right: 0.1rem;
   }
@@ -1825,7 +1836,7 @@ p:not(:last-of-type) {
 }
 
 .main-footer {
-  padding-top: 4.6rem;
+  padding: 4.6rem 0 4.9rem;
   background: var(--footer-background);
 }
 .main-footer .top {
@@ -1943,6 +1954,55 @@ p:not(:last-of-type) {
   .main-footer .business-seal {
     display: flex;
     justify-content: center;
+  }
+}
+
+.register-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 0;
+  background-color: var(--primary-color);
+  color: white;
+}
+.register-bar span {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 3rem;
+  letter-spacing: -0.06em;
+}
+@media (max-width: 550px) {
+  .register-bar span {
+    font-size: 1.4rem;
+    line-height: 3.2rem;
+  }
+}
+.register-bar span:nth-of-type(1) {
+  margin-right: 0.5rem;
+}
+@media (max-width: 550px) {
+  .register-bar span:nth-of-type(1) {
+    display: none;
+  }
+}
+.register-bar a {
+  padding: 1.1rem 1.75rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  margin-left: 2.1rem;
+}
+@media (max-width: 550px) {
+  .register-bar a {
+    padding: 0.6rem 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-left: 2.9rem;
   }
 }
 

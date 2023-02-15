@@ -29,6 +29,18 @@
   }
 }
 
+.btn-tertiary {
+  @extend .btn;
+  color: var(--primary-color);
+  background-color: white;
+  border-color: white;
+
+  &:hover {
+    background-color: transparent;
+    color: white;
+  }
+}
+
 .mobile-btn {
   display: flex;
   align-items: center;
