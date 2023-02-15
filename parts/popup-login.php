@@ -1,4 +1,4 @@
-<div class="popup-login close">
+<div class="popup-login <?php echo (!is_page("home")) ? "close" : "" ?>">
     <span class="close-btn">
       <?php get_icon('close') ?>
     </span>
