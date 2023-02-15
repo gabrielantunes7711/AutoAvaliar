@@ -2,8 +2,6 @@
 
 get_header(); 
 
-get_template_part("parts/popup-login"); 
-
 get_template_part("parts/section-hero"); 
 
 get_template_part("parts/section-interested"); 

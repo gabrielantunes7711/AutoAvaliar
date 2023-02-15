@@ -19,6 +19,8 @@ $register_link = get_field('register_link', 'option');
 </head>
 <body>
 
+<?php get_template_part("parts/popup-login"); ?>
+
 <header class="main-header">
     <div class="container">
       <div class="row">
