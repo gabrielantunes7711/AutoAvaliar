@@ -117,21 +117,6 @@ body {
     margin-top: 6.4rem;
   }
 }
-.row {
-  display: flex;
-}
-
-.cover {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-}
-
-.hidden {
-  display: none !important;
-}
-
 h2 {
   font-weight: 500;
   font-size: 3rem;
@@ -158,6 +143,21 @@ p:not(:last-of-type) {
     font-size: 1.4rem;
     line-height: 2.4rem;
   }
+}
+
+.row {
+  display: flex;
+}
+
+.cover {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .btn, .btn-secondary {
@@ -1073,6 +1073,7 @@ p:not(:last-of-type) {
 }
 .section-solutions .solutions-card .top {
   position: relative;
+  height: 100%;
 }
 .section-solutions .solutions-card img {
   object-fit: cover;

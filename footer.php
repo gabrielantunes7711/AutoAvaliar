@@ -92,3 +92,7 @@ $instagram = get_field('instagram','options');
         </div>
     </div>
 </footer>
+
+<?php wp_footer(); ?>
+</body>
+</html>

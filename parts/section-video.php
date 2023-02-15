@@ -32,11 +32,10 @@ $video = get_field('video')
         </div>
         
         <?php if (!empty($video['video_link'])): ?>
-        <div class="container-video">
+        <div class="container-video" data-iframe-src='<?php echo $video['video_link']; ?>'>
             <div class="container-close-btn">
                 <?php get_icon('close') ?>
             </div>
-            <iframe width="80%" height="80%" src="<?php echo $video['video_link']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <?php endif; ?>
     </div>
