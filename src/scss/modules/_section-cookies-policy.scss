@@ -1,0 +1,40 @@
+.page-cookies-privacy {
+  padding: 4rem 0 0;
+  line-height: 1.8rem;
+  font-size: 1.5rem;
+
+  h1 {
+    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 6.1rem;
+    color: var(--primary-color);
+    margin-bottom: 2.2rem;
+
+    @media (max-width: 1024px) {
+      font-size: 3.2rem;
+      line-height: 3.9rem;
+    }
+  }
+
+  h3 {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+
+    @media (max-width: 1024px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    margin: 2rem 0;
+    line-height: 1.8rem;
+  }
+
+  a {
+    color: var(--primary-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -3,6 +3,7 @@
   --primary-font-color: #181717;
   --secondary-font-color: #807c79;
   --primary-color: #f58220;
+  --primary-background-color: #f7f8fa;
   --primary-gradient: linear-gradient(90deg, #f58220 0%, #3c00ff 100%);
   --footer-background: linear-gradient(90deg, #f58220 50%, #3c00ff 159.31%);
   --primary-background-color: #f7f8fa;
@@ -148,6 +149,98 @@ p:not(:last-of-type) {
 @media (max-width: 1024px) {
   p {
     font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+}
+
+.typography h1 {
+  font-weight: 500;
+  font-size: 4.5rem;
+  line-height: 6.1rem;
+  color: var(--primary-font-color);
+}
+@media (max-width: 1024px) {
+  .typography h1 {
+    font-size: 2.4rem;
+    line-height: 4rem;
+  }
+}
+.typography h2 {
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-top: 3.2rem;
+  margin-bottom: 2.4rem;
+  line-height: 1.3;
+  color: var(--primary-font-color);
+}
+@media (max-width: 1024px) {
+  .typography h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+.typography h3 {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-top: 3.2rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: var(--primary-font-color);
+}
+@media (max-width: 1024px) {
+  .typography h3 {
+    font-size: 1.8rem;
+  }
+}
+.typography p {
+  margin: 3rem 0;
+  font-size: inherit;
+  color: var(--primary-font-color);
+  line-height: 3.2rem;
+}
+@media (max-width: 1024px) {
+  .typography p {
+    margin: 2.4rem 0;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+.typography strong {
+  font-size: inherit;
+  line-height: inherit;
+}
+.typography ul,
+.typography ol {
+  padding-left: 2.8rem;
+  margin: 2rem 0;
+}
+.typography ul ::marker,
+.typography ol ::marker {
+  color: var(--primary-color);
+}
+.typography ul li,
+.typography ol li {
+  font-size: inherit;
+  padding-left: 0.8rem;
+  margin: 0.8rem 0;
+}
+@media (max-width: 1024px) {
+  .typography ul li,
+  .typography ol li {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+.typography blockquote {
+  font-weight: 500;
+  font-size: inherit;
+  line-height: 2.8rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .typography blockquote {
+    font-size: 1.8rem;
     line-height: 2.4rem;
   }
 }
@@ -298,6 +391,31 @@ p:not(:last-of-type) {
   .container {
     max-width: 1220px;
   }
+}
+
+.dpo-in-charge {
+  padding: 3rem 4.2rem;
+  background-color: var(--primary-background-color);
+  margin: 5rem 0 6rem;
+}
+@media (max-width: 1024px) {
+  .dpo-in-charge {
+    padding: 3.2rem 1.15rem;
+  }
+}
+.dpo-in-charge strong {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+.dpo-in-charge a {
+  color: var(--primary-text-color);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+.dpo-in-charge a:hover {
+  color: var(--primary-color);
 }
 
 .swiper > .container {
@@ -2004,6 +2122,44 @@ p:not(:last-of-type) {
     line-height: 1.8rem;
     margin-left: 2.9rem;
   }
+}
+
+.page-cookies-privacy {
+  padding: 4rem 0 0;
+  line-height: 1.8rem;
+  font-size: 1.5rem;
+}
+.page-cookies-privacy h1 {
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 6.1rem;
+  color: var(--primary-color);
+  margin-bottom: 2.2rem;
+}
+@media (max-width: 1024px) {
+  .page-cookies-privacy h1 {
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+  }
+}
+.page-cookies-privacy h3 {
+  margin-bottom: 0;
+  font-size: 2.5rem;
+}
+@media (max-width: 1024px) {
+  .page-cookies-privacy h3 {
+    font-size: 1.8rem;
+  }
+}
+.page-cookies-privacy p {
+  margin: 2rem 0;
+  line-height: 1.8rem;
+}
+.page-cookies-privacy a {
+  color: var(--primary-color);
+}
+.page-cookies-privacy a:hover {
+  text-decoration: underline;
 }
 
 .page-404 {

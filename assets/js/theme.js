@@ -125,21 +125,22 @@ for (const btn of allPasswordVisibilityBtn) {
 }
 
 /* ------- Popup Login ------- */
+const popupLogin = document.querySelector(".popup-login");
 const loginAccessBtn = document.querySelector(".popup-login > button");
-const closeLoginPopupBtn = document.querySelector(".popup-login > span");
+const closeLoginPopupBtn = document.querySelector(".popup-login .close-btn");
 
-loginAccessBtn.addEventListener("click", (evt) => {
-  closeLoginAccess(evt.target);
+loginAccessBtn.addEventListener("click", () => {
+  closeLoginAccess();
 });
 
-closeLoginPopupBtn.addEventListener("click", (evt) => {
-  closeLoginAccess(evt.target);
+closeLoginPopupBtn.addEventListener("click", () => {
+  closeLoginAccess();
 });
 
-function closeLoginAccess(el) {
-  el.parentNode.classList.toggle("close");
+function closeLoginAccess() {
+  popupLogin.classList.toggle("close");
 
-  el.parentNode.classList.contains("close")
+  popupLogin.classList.contains("close")
     ? (loginAccessBtn.querySelector("svg").style.transform = "rotate(180deg)")
     : (loginAccessBtn.querySelector("svg").style.transform = null);
 }
