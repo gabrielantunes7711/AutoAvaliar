@@ -124,6 +124,29 @@ for (const btn of allPasswordVisibilityBtn) {
   });
 }
 
+/* ------- Reset Button Visibility ------- */
+const searchBarInput = document.querySelector(".search-bar input");
+const searchBarResetButton = document.querySelector(
+  ".search-bar button[type=reset]"
+);
+
+function mustShowResetButton() {
+  if (searchBarInput.value == "") {
+    searchBarResetButton.classList.add("hidden");
+  } else {
+    searchBarResetButton.classList.remove("hidden");
+  }
+}
+
+function hideSearchBarButton() {
+  searchBarResetButton.classList.add("hidden");
+}
+
+if (searchBarInput && searchBarResetButton) {
+  searchBarResetButton.addEventListener("click", hideSearchBarButton);
+  searchBarInput.addEventListener("input", mustShowResetButton);
+}
+
 /* ------- Popup Login ------- */
 const popupLogin = document.querySelector(".popup-login");
 const loginAccessBtn = document.querySelector(".popup-login > button");

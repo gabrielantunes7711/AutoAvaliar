@@ -6,7 +6,6 @@
   --primary-background-color: #f7f8fa;
   --primary-gradient: linear-gradient(90deg, #f58220 0%, #3c00ff 100%);
   --footer-background: linear-gradient(90deg, #f58220 50%, #3c00ff 159.31%);
-  --primary-background-color: #f7f8fa;
   --border-color: #ccc9c3;
   --transition: all ease 300ms;
   font-size: 62.5%;
@@ -111,6 +110,10 @@ button {
   border: none;
   cursor: pointer;
   outline: none;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  display: none;
 }
 
 body {
@@ -393,6 +396,85 @@ p:not(:last-of-type) {
   }
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.1rem solid var(--primary-font-color);
+  min-height: 3.2rem;
+}
+.search-bar img {
+  width: 1.85rem;
+  height: auto;
+}
+.search-bar input, .search-bar input::placeholder {
+  flex: 1;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--primary-font-color);
+}
+.search-bar button[type=reset] {
+  background-color: transparent;
+}
+.search-bar button[type=submit] {
+  display: none;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.pagination .page-numbers:not(.dots) {
+  width: 5.2rem;
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid var(--border-color);
+  transition: var(--transition);
+}
+.pagination .page-numbers:not(.dots):hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.pagination .page-numbers.current {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.pagination .dots {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  width: 5.2rem;
+}
+.pagination .prev,
+.pagination .next {
+  position: relative;
+}
+.pagination .prev::after,
+.pagination .next::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: url(../img/icon-right-chevron.svg);
+  background-size: 0.6rem 0.8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pagination .prev {
+  transform: rotate(180deg);
+}
+
 .swiper > .container {
   display: flex;
 }
@@ -527,7 +609,7 @@ p:not(:last-of-type) {
   font-size: 1.3rem;
   line-height: 1.6rem;
 }
-.popup-login form .container-input input {
+.popup-login form .container-input input, .popup-login form .container-input .search-bar input::placeholder, .search-bar .popup-login form .container-input input::placeholder {
   color: white;
   width: 100%;
   border: 1px solid white;
@@ -551,7 +633,7 @@ p:not(:last-of-type) {
 .popup-login form .container-input.container-password label {
   width: 100%;
 }
-.popup-login form .container-input.container-password input {
+.popup-login form .container-input.container-password input, .popup-login form .container-input.container-password .search-bar input::placeholder, .search-bar .popup-login form .container-input.container-password input::placeholder {
   width: 80%;
   border-right: none;
   outline: none;
@@ -585,13 +667,13 @@ p:not(:last-of-type) {
   font-size: 0.9rem;
   line-height: 1rem;
 }
-.popup-login form .bottom .container-checkbox input {
+.popup-login form .bottom .container-checkbox input, .popup-login form .bottom .container-checkbox .search-bar input::placeholder, .search-bar .popup-login form .bottom .container-checkbox input::placeholder {
   appearance: none;
   border: 0.1rem solid white;
   height: 1rem;
   width: 1rem;
 }
-.popup-login form .bottom .container-checkbox input:checked {
+.popup-login form .bottom .container-checkbox input:checked, .popup-login form .bottom .container-checkbox .search-bar input:checked::placeholder, .search-bar .popup-login form .bottom .container-checkbox input:checked::placeholder {
   background-color: white;
 }
 .popup-login form .bottom > a {
@@ -629,7 +711,7 @@ p:not(:last-of-type) {
   border-bottom: 1px solid var(--primary-font-color);
   margin: 3.3rem 0 4.6rem;
 }
-.main-header .menu-mobile-search input {
+.main-header .menu-mobile-search input, .main-header .menu-mobile-search .search-bar input::placeholder, .search-bar .main-header .menu-mobile-search input::placeholder {
   flex: 1;
   border: none;
   outline: none;
@@ -2212,6 +2294,85 @@ p:not(:last-of-type) {
 }
 .page-cookies-privacy .dpo-in-charge a:hover {
   color: var(--primary-color);
+}
+
+.page-search {
+  margin-top: 3.2rem;
+}
+@media (max-width: 1366px) {
+  .page-search {
+    margin-top: 9.8rem;
+  }
+}
+.page-search h1 {
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 6.1rem;
+  color: var(--primary-color);
+  margin-bottom: 3.5rem;
+}
+@media (max-width: 1024px) {
+  .page-search h1 {
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+    margin-bottom: 1.6rem;
+  }
+}
+.page-search > span {
+  font-weight: 400;
+  font-size: 15rem;
+  line-height: 18rem;
+}
+@media (max-width: 1024px) {
+  .page-search > span {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}
+.page-search form {
+  width: 100%;
+  padding: 4.5rem 0;
+  background-color: var(--primary-background-color);
+  margin: 3.2rem 0 5rem;
+}
+@media (max-width: 1024px) {
+  .page-search form {
+    margin-bottom: 3.2rem;
+  }
+}
+.page-search .search-result:not(:last-of-type) {
+  margin-bottom: 2.4rem;
+}
+.page-search .search-result h2 {
+  width: 100%;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  text-transform: uppercase;
+  padding-bottom: 0.8rem;
+  border-bottom: 0.1rem solid var(--border-color);
+  margin-bottom: 0.8rem;
+}
+@media (max-width: 1024px) {
+  .page-search .search-result h2 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+}
+.page-search .search-result p {
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: var(--primary-text-color);
+}
+@media (max-width: 1024px) {
+  .page-search .search-result p {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+}
+.page-search .pagination {
+  margin: 5rem 0;
 }
 
 /*# sourceMappingURL=theme.css.map */

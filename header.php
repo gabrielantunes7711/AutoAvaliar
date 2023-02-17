@@ -38,10 +38,10 @@ $register_link = get_field('register_link', 'option');
 
         <div class="right">
           <div class="container-menu-mobile">
-            <form class="menu-mobile-search" action="" method="get">
-              <input type="search" name="s" id="s" placeholder="Buscar no site">
+            <form class="menu-mobile-search" action="<?php site_url(); ?>" method="get">
+              <input type="search" name="s" placeholder="Buscar no site">
               
-              <img src="<?php echo get_template_directory_uri()?>/assets/img/icon-search.svg" alt="Ícone para fazer pesquisa">
+              <img src="<?php echo get_img("icon-search.svg"); ?>" alt="Ícone para fazer pesquisa">
 
               <button type="submit" class="btn-secondary">Buscar</button>
             </form>

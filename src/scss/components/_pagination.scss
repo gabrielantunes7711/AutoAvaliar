@@ -1,0 +1,57 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+
+  .page-numbers {
+    &:not(.dots) {
+      width: 5.2rem;
+      height: 5.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0.1rem solid var(--border-color);
+      transition: var(--transition);
+
+      &:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+
+    &.current {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    width: 5.2rem;
+  }
+
+  .prev,
+  .next {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-image: url(../img/icon-right-chevron.svg);
+      background-size: 0.6rem 0.8rem;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .prev {
+    transform: rotate(180deg);
+  }
+}

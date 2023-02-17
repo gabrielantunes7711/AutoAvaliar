@@ -1,0 +1,38 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.1rem solid var(--primary-font-color);
+  min-height: 3.2rem;
+
+  img {
+    width: 1.85rem;
+    height: auto;
+  }
+
+  input {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--primary-font-color);
+
+    &::placeholder {
+      @extend input;
+    }
+  }
+
+  button {
+    &[type="reset"] {
+      background-color: transparent;
+    }
+
+    &[type="submit"] {
+      display: none;
+    }
+  }
+}

@@ -35,3 +35,46 @@ function get_img($filename){
 function get_icon($iconname){
 	get_template_part("/assets/icons/{$iconname}");
 }
+
+function get_search_term($term){
+    return $_GET[$term];
+}
+
+function summarize_content($content, $charsNumber){
+   return substr(strip_tags($content), 0, $charsNumber);
+}
+
+function emphasize_word($content, $word){
+    if (stripos($content, $word) !== false) {
+        $content = str_ireplace($word, '<strong>' . $word . '</strong>', $content);
+    };
+
+    return $content;
+}
+
+function translate_post_type($post_type){
+    $result = "";
+
+    switch ($post_type) {
+        case 'solution':
+            $result = "Soluções";
+        break;
+
+        case 'page':
+            $result = "Página";
+        break;
+
+        case 'post':
+            $result = "Notícias";
+        break;
+
+        case 'evento':
+            $result = "Eventos";
+        break;
+        
+        default:
+        break;
+    }
+
+    return $result;
+}
