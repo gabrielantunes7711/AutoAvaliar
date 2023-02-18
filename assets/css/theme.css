@@ -490,6 +490,28 @@ p:not(:last-of-type) {
   }
 }
 
+.scrollbar-styled::-webkit-scrollbar {
+  width: 0.2rem;
+}
+@media (max-width: 1366px) {
+  .scrollbar-styled::-webkit-scrollbar {
+    height: 0.2rem;
+  }
+}
+
+.scrollbar-styled::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, rgb(255, 255, 255) 50%, rgb(127, 124, 121) 50%);
+}
+@media (max-width: 1366px) {
+  .scrollbar-styled::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgb(255, 255, 255) 50%, rgb(127, 124, 121) 50%);
+  }
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb {
+  background-color: #181717;
+}
+
 .swiper > .container {
   display: flex;
 }
@@ -1110,25 +1132,6 @@ p:not(:last-of-type) {
     height: auto;
     padding-bottom: 2.4rem;
   }
-}
-.for-who-infos .left::-webkit-scrollbar {
-  width: 0.2rem;
-}
-@media (max-width: 1366px) {
-  .for-who-infos .left::-webkit-scrollbar {
-    height: 0.2rem;
-  }
-}
-.for-who-infos .left::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, rgb(255, 255, 255) 50%, rgb(127, 124, 121) 50%);
-}
-@media (max-width: 1366px) {
-  .for-who-infos .left::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, rgb(255, 255, 255) 50%, rgb(127, 124, 121) 50%);
-  }
-}
-.for-who-infos .left::-webkit-scrollbar-thumb {
-  background-color: #181717;
 }
 .for-who-infos .left h3 {
   font-weight: 500;
@@ -2284,6 +2287,179 @@ p:not(:last-of-type) {
     font-size: 3.2rem;
     line-height: 3.9rem;
   }
+}
+
+.our-history {
+  padding: 6rem 0;
+}
+@media (max-width: 1366px) {
+  .our-history {
+    padding: 3.2rem 0;
+  }
+}
+.our-history header {
+  display: flex;
+  gap: 1.6rem;
+}
+@media (max-width: 1366px) {
+  .our-history header {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
+.our-history header h2 {
+  flex-shrink: 0;
+}
+.our-history header p {
+  max-width: 43.3rem;
+}
+.our-history main {
+  display: flex;
+  margin-top: 6.6rem;
+  gap: 4rem;
+  height: 45.8rem;
+}
+@media (max-width: 1366px) {
+  .our-history main {
+    flex-direction: column;
+    height: auto;
+    margin-top: 2.4rem;
+    gap: 2.4rem;
+  }
+}
+.our-history main .left {
+  display: flex;
+  gap: 3rem;
+  width: 36rem;
+  flex-shrink: 0;
+}
+@media (max-width: 1366px) {
+  .our-history main .left {
+    width: 100%;
+  }
+}
+.our-history main .left .navigation-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1366px) {
+  .our-history main .left .navigation-wrapper {
+    display: none;
+  }
+}
+.our-history main .left .navigation-wrapper div {
+  transform: rotate(90deg);
+}
+.our-history main .left ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.3rem;
+  list-style: none;
+  overflow-y: auto;
+}
+@media (max-width: 1366px) {
+  .our-history main .left ul {
+    flex-direction: row;
+    gap: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+}
+.our-history main .left ul li a {
+  opacity: 0.18;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-right: 2rem;
+}
+.our-history main .left ul li a.selected {
+  opacity: 1;
+}
+.our-history main .left ul li a.selected strong {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 139.5%;
+}
+@media (max-width: 1366px) {
+  .our-history main .left ul li a.selected strong {
+    font-size: 2.4rem;
+    line-height: 139.5%;
+  }
+}
+.our-history main .left ul li a.selected span {
+  font-weight: 500;
+  font-size: 2.2rem;
+  line-height: 139.5%;
+}
+.our-history main .left ul li strong {
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 139.5%;
+  pointer-events: none;
+}
+@media (max-width: 1366px) {
+  .our-history main .left ul li strong {
+    font-size: 2.4rem;
+    line-height: 139.5%;
+  }
+}
+.our-history main .left ul li span {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 139.5%;
+  pointer-events: none;
+}
+@media (max-width: 1366px) {
+  .our-history main .left ul li span {
+    display: none;
+  }
+}
+.our-history main .our-history-card {
+  display: none;
+  gap: 6.8rem;
+}
+@media (max-width: 1366px) {
+  .our-history main .our-history-card {
+    flex-direction: column-reverse;
+    gap: 2.4rem;
+  }
+}
+.our-history main .our-history-card:nth-of-type(2) {
+  display: flex;
+}
+.our-history main .our-history-card figure {
+  width: 35.1rem;
+  height: 45.8rem;
+  flex-shrink: 0;
+}
+@media (max-width: 1366px) {
+  .our-history main .our-history-card figure {
+    width: 100%;
+    height: 30rem;
+  }
+}
+.our-history main .our-history-card .description-wrapper {
+  padding-top: 5rem;
+}
+@media (max-width: 1366px) {
+  .our-history main .our-history-card .description-wrapper {
+    padding-top: 0;
+  }
+}
+.our-history main .our-history-card p {
+  color: var(--primary-text-color);
+  font-weight: 400;
+  font-size: 2.3rem;
+  line-height: 2.8rem;
+}
+@media (max-width: 1366px) {
+  .our-history main .our-history-card p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+}
+.our-history main .our-history-card p strong {
+  font-weight: 600;
 }
 
 .page-404 {

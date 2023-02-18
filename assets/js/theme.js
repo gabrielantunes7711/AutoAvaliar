@@ -81,28 +81,32 @@ function hideScrollbar() {
 const forWhoItems = document.querySelectorAll(".for-who-infos ul li a");
 const forWhoCards = document.querySelectorAll(".for-who-card");
 
-for (const item of forWhoItems) {
-  item.addEventListener("click", (event) => {
-    event.preventDefault();
-    const el = event.target;
-    const itemId = el.getAttribute("href").replace("#", "");
+showSectionCard(forWhoItems, forWhoCards);
 
-    for (const item of forWhoItems) {
-      if (el !== item) {
-        item.classList.remove("selected");
-      } else {
-        el.classList.add("selected");
-      }
-    }
+function showSectionCard(allOptions, allCards) {
+  for (const item of allOptions) {
+    item.addEventListener("click", (event) => {
+      event.preventDefault();
+      const el = event.target;
+      const itemId = el.getAttribute("href").replace("#", "");
 
-    for (const card of forWhoCards) {
-      if (card.id === itemId) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
+      for (const item of allOptions) {
+        if (el !== item) {
+          item.classList.remove("selected");
+        } else {
+          el.classList.add("selected");
+        }
       }
-    }
-  });
+
+      for (const card of allCards) {
+        if (card.id === itemId) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    });
+  }
 }
 
 /* ------- Password Visibility ------- */
@@ -211,6 +215,64 @@ function toggleVideoModal(event) {
   }
 }
 
+/* ------- Section Our History ------- */
+const prevHistoryBtn = document.querySelector(".our-history .btn-prev");
+const nextHistoryBtn = document.querySelector(".our-history .btn-next");
+const ourHistoryOptionsContainer = document.querySelector(".our-history ul");
+const ourHistoryAllOptions = document.querySelectorAll(".our-history ul a");
+const ourHistoryCards = document.querySelectorAll(
+  ".our-history .our-history-card"
+);
+
+if (prevHistoryBtn && nextHistoryBtn) {
+  nextHistoryBtn.addEventListener("click", () => {
+    sectionCardNavigation(ourHistoryOptionsContainer, ourHistoryCards, true);
+  });
+  prevHistoryBtn.addEventListener("click", () => {
+    sectionCardNavigation(ourHistoryOptionsContainer, ourHistoryCards, false);
+  });
+
+  showSectionCard(ourHistoryAllOptions, ourHistoryCards);
+}
+
+function sectionCardNavigation(listOptions, listCards, direction) {
+  direction = direction ? "next" : "previous";
+  const mustShow =
+    listOptions.querySelector(".selected").parentNode[
+      `${direction}ElementSibling`
+    ];
+
+  if (mustShow != null) {
+    const itemId = mustShow.firstElementChild
+      .getAttribute("href")
+      .replace("#", "");
+    const mustShowPosition =
+      mustShow.offsetTop - ourHistoryOptionsContainer.offsetTop;
+
+    for (const option of listOptions.children) {
+      option.firstElementChild.classList.remove("selected");
+    }
+    mustShow.firstElementChild.classList.add("selected");
+
+    for (const card of listCards) {
+      if (card.id === itemId) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    }
+
+    if (
+      mustShowPosition < ourHistoryOptionsContainer.scrollTop ||
+      mustShowPosition >
+        ourHistoryOptionsContainer.scrollTop +
+          ourHistoryOptionsContainer.clientHeight
+    ) {
+      ourHistoryOptionsContainer.scrollTop = mustShowPosition;
+    }
+  }
+}
+
 /* ------- Mobile ------- */
 let screen = window.innerWidth;
 
@@ -240,8 +302,6 @@ for (let item of menuMobileItems) {
     let submenuHeight = 0;
     if ((el.tagName = "a" && screen <= 1366)) {
       evt.preventDefault();
-
-      console.log(el);
 
       for (const submenu of allOpenSubmenu) {
         if (submenu !== el.nextElementSibling) {

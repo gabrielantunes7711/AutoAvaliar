@@ -19,7 +19,7 @@ $count = 1;
       <p><?php echo $description; ?></p>
     
       <div class="for-who-infos">
-        <ul class="left">
+        <ul class="left scrollbar-styled">
           <?php foreach($for_who_item as $item) : ?>
           <li>  
             <a href="#forWhoCard<?php echo $count ?>" class="info-choice <?php echo $count == "1" ? "selected" : ''; ?>">
