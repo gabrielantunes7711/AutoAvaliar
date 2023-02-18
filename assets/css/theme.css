@@ -2375,4 +2375,54 @@ p:not(:last-of-type) {
   margin: 5rem 0;
 }
 
+.page-site-map {
+  margin-top: 4rem;
+}
+@media (max-width: 1366px) {
+  .page-site-map {
+    margin-top: 10rem;
+  }
+}
+.page-site-map h1 {
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 6.1rem;
+  color: var(--primary-color);
+}
+.page-site-map nav {
+  margin: 2.3rem 0 8rem;
+}
+.page-site-map nav ul {
+  list-style: none;
+}
+.page-site-map nav a {
+  transition: var(--transition);
+}
+.page-site-map nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6.4rem;
+}
+.page-site-map nav > ul > li {
+  width: 23.4rem;
+}
+.page-site-map nav > ul > li > a {
+  color: var(--primary-color);
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+.page-site-map nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+.page-site-map nav > ul > li ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  margin-top: 3rem;
+}
+.page-site-map nav > ul > li ul a {
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+}
+
 /*# sourceMappingURL=theme.css.map */

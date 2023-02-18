@@ -37,7 +37,7 @@ function get_icon($iconname){
 }
 
 function get_search_term($term){
-    return $_GET[$term];
+    return htmlspecialchars(htmlentities($_GET[$term]));
 }
 
 function summarize_content($content, $charsNumber){
@@ -50,31 +50,4 @@ function emphasize_word($content, $word){
     };
 
     return $content;
-}
-
-function translate_post_type($post_type){
-    $result = "";
-
-    switch ($post_type) {
-        case 'solution':
-            $result = "Soluções";
-        break;
-
-        case 'page':
-            $result = "Página";
-        break;
-
-        case 'post':
-            $result = "Notícias";
-        break;
-
-        case 'evento':
-            $result = "Eventos";
-        break;
-        
-        default:
-        break;
-    }
-
-    return $result;
 }

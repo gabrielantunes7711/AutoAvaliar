@@ -1,0 +1,58 @@
+.page-site-map {
+  margin-top: 4rem;
+
+  @media (max-width: 1366px) {
+    margin-top: 10rem;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 4.5rem;
+    line-height: 6.1rem;
+    color: var(--primary-color);
+  }
+
+  nav {
+    margin: 2.3rem 0 8rem;
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      transition: var(--transition);
+    }
+
+    & > ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6.4rem;
+
+      & > li {
+        width: 23.4rem;
+
+        & > a {
+          color: var(--primary-color);
+          font-size: 2rem;
+          line-height: 2.3rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 2.3rem;
+          margin-top: 3rem;
+
+          a {
+            font-size: 1.5rem;
+            line-height: 2.3rem;
+          }
+        }
+      }
+    }
+  }
+}

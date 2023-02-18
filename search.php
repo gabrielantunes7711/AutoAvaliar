@@ -1,5 +1,5 @@
 <?php 
-$per_page = 2;
+$per_page = 11;
 $search_term = get_search_term("s");
 
 $args = [
@@ -7,14 +7,13 @@ $args = [
   'posts_per_page' => $per_page,
   's' => $search_term,
   'paged' => $paged,
+  'post__not_in' => [258]
 ];
 
 $the_query = new WP_Query( $args );
 $count = $the_query->found_posts;
-$total_pages = ceil($the_query->found_posts / $per_page);
+$total_pages = $the_query->max_num_pages;
 $current_page = get_query_var('paged') ? get_query_var('paged') : 1;
-
-
 ?>
 
 <?php get_header(); ?>
@@ -26,7 +25,7 @@ $current_page = get_query_var('paged') ? get_query_var('paged') : 1;
     <span>Foram encontrados <strong><?php echo $count; ?></strong> resultados com o termo <strong>"<?php echo $search_term; ?>"</strong></span>
   </div>
 
-    <form action="<?php site_url(); ?>">
+    <form action="<?php echo site_url(); ?>">
       <div class="container">
         <div class="search-bar">
           <img src="<?php echo get_img("icon-search.svg"); ?>" alt="Ícone de lupa">
@@ -44,6 +43,7 @@ $current_page = get_query_var('paged') ? get_query_var('paged') : 1;
 
     <div class="search-results-wrapper">
       <div class="container">
+        
         <?php 
             if ($the_query->have_posts()):
                 while ($the_query->have_posts()) :
@@ -52,13 +52,15 @@ $current_page = get_query_var('paged') ? get_query_var('paged') : 1;
             $content = summarize_content(get_the_content(), 500);
             $content = emphasize_word($content, $search_term);
 
-            $post_type = translate_post_type($post->post_type);
+            $post_type = get_post_type_labels(get_post_type_object($post->post_type));
 
-          
+            $post_type_label = str_ireplace('posts','Notícias', $post_type->name);
+
         ?>
+
         <article class="search-result">
-          <a href="">
-            <h2><?php the_title(); ?> - <strong><?php echo $post_type; ?></strong></h2>
+          <a href="<?php the_permalink(); ?>">
+            <h2><?php the_title(); ?> - <strong><?php echo $post_type_label; ?></strong></h2>
 
             <p><?php echo $content; ?></p>
           </a>
