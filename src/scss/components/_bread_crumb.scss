@@ -1,0 +1,15 @@
+#breadcrumbs {
+  span {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.5em;
+    color: var(--primary-color);
+
+    @media (max-width: 1024px) {
+      font-size: 1.2rem;
+      line-height: 2.4rem;
+      letter-spacing: normal;
+    }
+  }
+}

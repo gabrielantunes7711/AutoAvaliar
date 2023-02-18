@@ -475,6 +475,21 @@ p:not(:last-of-type) {
   transform: rotate(180deg);
 }
 
+#breadcrumbs span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.5em;
+  color: var(--primary-color);
+}
+@media (max-width: 1024px) {
+  #breadcrumbs span {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+  }
+}
+
 .swiper > .container {
   display: flex;
 }
@@ -2178,6 +2193,53 @@ p:not(:last-of-type) {
     font-size: 1.2rem;
     line-height: 1.8rem;
     margin-left: 2.9rem;
+  }
+}
+
+.section-header {
+  padding: 7.2rem 0;
+}
+@media (max-width: 1024px) {
+  .section-header {
+    padding: 3.2rem 0;
+  }
+}
+.section-header .bottom {
+  display: flex;
+  gap: 6.7rem;
+  margin-top: 0.7rem;
+}
+@media (max-width: 1024px) {
+  .section-header .bottom {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+}
+.section-header .bottom h1 {
+  width: 100%;
+  max-width: 54.5rem;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 61px;
+}
+@media (max-width: 1024px) {
+  .section-header .bottom h1 {
+    font-size: 2.4rem;
+    line-height: 4rem;
+    max-width: initial;
+  }
+}
+.section-header p {
+  color: var(--primary-text-color);
+  font-size: 2.2rem;
+  line-height: 3.8rem;
+}
+@media (max-width: 1024px) {
+  .section-header p {
+    font-size: 1.6rem;
+    line-height: 3rem;
   }
 }
 
