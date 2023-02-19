@@ -66,6 +66,23 @@ const swiperNews = new Swiper(".slide-news", {
   },
 });
 
+const swiperOurLocation = new Swiper(".slide-our-location", {
+  direction: "vertical",
+  slidesPerView: 99,
+  spaceBetween: 24,
+  autoHeight: true,
+  breakpoints: {
+    1024: {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+    },
+  },
+  navigation: {
+    nextEl: ".btn-next",
+    prevEl: ".btn-prev",
+  },
+});
+
 /* ------- Hide Scrollbar ------- */
 function hideScrollbar() {
   if (document.body.parentNode.style.overflow === "hidden") {
