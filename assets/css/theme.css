@@ -2319,6 +2319,9 @@ p:not(:last-of-type) {
   gap: 4rem;
   height: 45.8rem;
 }
+.our-history main:has(.first-item.selected) .navigation-wrapper div:nth-of-type(1), .our-history main:has(.last-item.selected) .navigation-wrapper div:nth-of-type(2) {
+  opacity: 0.3;
+}
 @media (max-width: 1366px) {
   .our-history main {
     flex-direction: column;
@@ -2460,6 +2463,84 @@ p:not(:last-of-type) {
 }
 .our-history main .our-history-card p strong {
   font-weight: 600;
+}
+
+.section-our-numbers {
+  background-color: var(--primary-background-color);
+  padding: 6rem 0;
+}
+@media (max-width: 1024px) {
+  .section-our-numbers {
+    padding: 3.2rem 0;
+  }
+}
+.section-our-numbers .container {
+  display: flex;
+  gap: 7.7rem;
+}
+@media (max-width: 1366px) {
+  .section-our-numbers .container {
+    flex-direction: column-reverse;
+    gap: 2.3rem;
+  }
+}
+.section-our-numbers .left {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: max-content;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .section-our-numbers .left {
+    grid-template-columns: 1fr;
+  }
+}
+.section-our-numbers .our-numbers-card {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  padding: 0 6rem;
+  max-width: 37.5rem;
+  min-width: 37.5rem;
+  height: 18.8rem;
+  border: 0.1rem solid var(--border-color);
+  box-shadow: 0 0 0 1px var(--border-color);
+}
+@media (max-width: 768px) {
+  .section-our-numbers .our-numbers-card {
+    padding: 0;
+    width: 32rem;
+    justify-content: center;
+  }
+}
+.section-our-numbers .our-numbers-card span {
+  color: var(--primary-color);
+}
+.section-our-numbers .our-numbers-card span:nth-of-type(1) {
+  font-size: 6rem;
+  line-height: 6.5rem;
+  text-transform: uppercase;
+}
+@media (max-width: 1024px) {
+  .section-our-numbers .our-numbers-card span:nth-of-type(1) {
+    font-size: 6.4rem;
+    line-height: 6.8rem;
+  }
+}
+.section-our-numbers .our-numbers-card span:nth-of-type(2) {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+@media (max-width: 1024px) {
+  .section-our-numbers .our-numbers-card span:nth-of-type(2) {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .section-our-numbers .our-numbers-card span:nth-of-type(2) {
+    max-width: min-content;
+  }
 }
 
 .page-404 {

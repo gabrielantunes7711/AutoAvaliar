@@ -273,6 +273,55 @@ function sectionCardNavigation(listOptions, listCards, direction) {
   }
 }
 
+/* ------- Section Our Numbers ------- */
+const sectionOurNumbers = document.querySelector(".section-our-numbers");
+const ourNumbers = document.querySelectorAll(
+  ".our-numbers-card span:nth-of-type(1)"
+);
+
+function onScroll() {
+  if (isInView(sectionOurNumbers, 320)) {
+    for (const number of ourNumbers) {
+      incrementNumbers(number, 2000);
+    }
+    window.removeEventListener("scroll", onScroll);
+  }
+}
+
+window.addEventListener("scroll", onScroll);
+
+function incrementNumbers(numberWrapper, duration) {
+  const strNumber = numberWrapper.dataset.number.match(/([\d.]+)([a-zA-Z]+)/);
+  const number = strNumber ? strNumber[1] : numberWrapper.dataset.number;
+  const letters = strNumber ? strNumber[2] : "";
+
+  const totalIncrement = number % 1 === 0 ? number : number * 2;
+  let count = 0;
+
+  const increment = setInterval(() => {
+    if (count == number) {
+      clearInterval(increment);
+    }
+    if (number % 1 === 0) {
+      numberWrapper.innerText = count + letters;
+    } else {
+      numberWrapper.innerText = count.toFixed(1) + letters;
+    }
+
+    if (number % 1 === 0) {
+      count++;
+    } else {
+      count += 0.5;
+    }
+  }, duration / totalIncrement);
+}
+
+function isInView(element, padding) {
+  const rect = element.getBoundingClientRect();
+  console.log(rect.top);
+  return rect.top - padding <= 0;
+}
+
 /* ------- Mobile ------- */
 let screen = window.innerWidth;
 

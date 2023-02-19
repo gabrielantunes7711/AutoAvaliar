@@ -1,0 +1,76 @@
+.section-our-numbers {
+  background-color: var(--primary-background-color);
+  padding: 6rem 0;
+
+  @media (max-width: 1024px) {
+    padding: 3.2rem 0;
+  }
+
+  .container {
+    display: flex;
+    gap: 7.7rem;
+
+    @media (max-width: 1366px) {
+      flex-direction: column-reverse;
+      gap: 2.3rem;
+    }
+  }
+
+  .left {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: max-content;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .our-numbers-card {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    padding: 0 6rem;
+    max-width: 37.5rem;
+    min-width: 37.5rem;
+    height: 18.8rem;
+    border: 0.1rem solid var(--border-color);
+    box-shadow: 0 0 0 1px var(--border-color);
+
+    @media (max-width: 768px) {
+      padding: 0;
+      width: 32rem;
+      justify-content: center;
+    }
+
+    span {
+      color: var(--primary-color);
+
+      &:nth-of-type(1) {
+        font-size: 6rem;
+        line-height: 6.5rem;
+        text-transform: uppercase;
+
+        @media (max-width: 1024px) {
+          font-size: 6.4rem;
+          line-height: 6.8rem;
+        }
+      }
+
+      &:nth-of-type(2) {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+
+        @media (max-width: 1024px) {
+          font-size: 1.6rem;
+          line-height: 2.3rem;
+        }
+
+        @media (max-width: 768px) {
+          max-width: min-content;
+        }
+      }
+    }
+  }
+}

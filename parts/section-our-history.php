@@ -30,7 +30,7 @@ $count = 1;
         <ul class="scrollbar-styled">
           <?php if (!empty($our_history['our_history_item'])): foreach($our_history['our_history_item'] as $item) : ?>
           <li>
-            <a href="#ourHistory<?php echo $count; ?>" <?php echo $count == 1 ? "class='selected'" : ""; ?>>
+            <a href="#ourHistory<?php echo $count; ?>" <?php echo $count == 1 ? "class='selected first-item'" : ""; echo $count == count($our_history['our_history_item']) ? "class='last-item'" : "";?>>
               <?php if (!empty($item['year'])): ?>
               <strong><?php echo $item['year']; ?></strong>
               <?php endif; ?>

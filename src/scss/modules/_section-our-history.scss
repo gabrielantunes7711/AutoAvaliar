@@ -29,6 +29,11 @@
     gap: 4rem;
     height: 45.8rem;
 
+    &:has(.first-item.selected) .navigation-wrapper div:nth-of-type(1),
+    &:has(.last-item.selected) .navigation-wrapper div:nth-of-type(2) {
+      opacity: 0.3;
+    }
+
     @media (max-width: 1366px) {
       flex-direction: column;
       height: auto;
