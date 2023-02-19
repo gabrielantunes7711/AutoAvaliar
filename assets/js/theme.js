@@ -280,7 +280,7 @@ const ourNumbers = document.querySelectorAll(
 );
 
 function onScroll() {
-  if (isInView(sectionOurNumbers, 320)) {
+  if (isInView(sectionOurNumbers, 700)) {
     for (const number of ourNumbers) {
       incrementNumbers(number, 2000);
     }
@@ -294,14 +294,14 @@ function incrementNumbers(numberWrapper, duration) {
   const strNumber = numberWrapper.dataset.number.match(/([\d.]+)([a-zA-Z]+)/);
   const number = strNumber ? strNumber[1] : numberWrapper.dataset.number;
   const letters = strNumber ? strNumber[2] : "";
-
   const totalIncrement = number % 1 === 0 ? number : number * 2;
-  let count = 0;
+  let count = number % 1 === 0 ? 0 : 0.5;
 
   const increment = setInterval(() => {
     if (count == number) {
       clearInterval(increment);
     }
+
     if (number % 1 === 0) {
       numberWrapper.innerText = count + letters;
     } else {
