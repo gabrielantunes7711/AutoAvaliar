@@ -1,17 +1,17 @@
 <?php
 
-$solutions = get_field("solutions")
+$section_solutions = get_field("section_solutions")
 
 ?>
 
 <section class="section-solutions">
     <div class="container">
-        <?php if (!empty($solutions['title'])): ?>
-        <h2><?php echo $solutions['title']; ?></h2>
+        <?php if (!empty($section_solutions['title'])): ?>
+        <h2><?php echo $section_solutions['title']; ?></h2>
         <?php endif; ?>
 
-        <?php if (!empty($solutions['description'])): ?>
-        <p><?php echo $solutions['description']; ?></p>
+        <?php if (!empty($section_solutions['description'])): ?>
+        <p><?php echo $section_solutions['description']; ?></p>
         <?php endif; ?>
     </div>
     
