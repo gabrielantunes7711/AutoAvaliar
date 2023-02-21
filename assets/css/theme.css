@@ -1153,13 +1153,13 @@ p:not(:last-of-type) {
   display: flex;
   gap: 2.1rem;
   align-items: center;
-  justify-content: center;
   opacity: 0.7;
 }
 @media (max-width: 1366px) {
   .for-who-infos .left .info-choice {
     flex-direction: column;
     gap: 0.8rem;
+    align-items: center;
   }
 }
 .for-who-infos .left .info-choice.selected {
@@ -1282,6 +1282,25 @@ p:not(:last-of-type) {
     height: auto;
   }
 }
+@media (min-width: 1024px) {
+  .section-solutions .solutions-card:hover .top {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  .section-solutions .solutions-card:hover .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .section-solutions .solutions-card:hover .bottom p {
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+    margin-bottom: 2.8rem;
+    font-weight: 400;
+  }
+}
 .section-solutions .solutions-card:hover img {
   filter: brightness(50%);
 }
@@ -1333,6 +1352,7 @@ p:not(:last-of-type) {
   display: none;
   padding: 1.6rem 2.2rem 2.4rem;
   background-color: white;
+  transition: var(--transition);
 }
 @media (max-width: 1024px) {
   .section-solutions .solutions-card .bottom {
@@ -2762,6 +2782,9 @@ p:not(:last-of-type) {
     font-size: 1.6rem;
     line-height: 2rem;
   }
+}
+.section-for-who-items .for-who-items-card p strong {
+  font-weight: 500;
 }
 .section-for-who-items .for-who-items-card span {
   display: flex;

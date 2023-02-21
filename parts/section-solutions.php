@@ -43,7 +43,7 @@ $solutions = get_field("solutions")
                         <div class="bottom">
                             <p>Com o marketplace B2B, através de um aplicativo próprio, o avaliador acessa todas as características do veículo para determinar o preço justo.</p>
 
-                            <a href="<?php the_permalink() ?>" class="btn-secondary">Conheça mais <?php get_icon('arrow-right') ?></a>
+                            <span class="btn-secondary">Conheça mais <?php get_icon('arrow-right') ?></span>
                         </div>
                     </a>
                 </article>
