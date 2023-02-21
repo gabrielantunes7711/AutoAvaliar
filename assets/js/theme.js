@@ -296,12 +296,14 @@ const ourNumbers = document.querySelectorAll(
   ".our-numbers-card span:nth-of-type(1)"
 );
 
-function onScroll() {
-  if (isInView(sectionOurNumbers, 700)) {
-    for (const number of ourNumbers) {
-      incrementNumbers(number, 2000);
+if (sectionOurNumbers) {
+  function onScroll() {
+    if (isInView(sectionOurNumbers, 700)) {
+      for (const number of ourNumbers) {
+        incrementNumbers(number, 2000);
+      }
+      window.removeEventListener("scroll", onScroll);
     }
-    window.removeEventListener("scroll", onScroll);
   }
 }
 

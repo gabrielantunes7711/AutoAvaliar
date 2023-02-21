@@ -1153,6 +1153,7 @@ p:not(:last-of-type) {
   display: flex;
   gap: 2.1rem;
   align-items: center;
+  justify-content: center;
   opacity: 0.7;
 }
 @media (max-width: 1366px) {
@@ -1167,6 +1168,7 @@ p:not(:last-of-type) {
 .for-who-infos .left .container-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 5.6rem;
   height: 5.6rem;
   pointer-events: none;

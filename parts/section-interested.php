@@ -1,74 +1,85 @@
 <?php 
+ $args = [
+  'post_type' => 'for_who',
+  'posts_per_page' => -1,
+];
 
-$for_who = get_field("for_who");
+$the_query = new WP_Query( $args );
 
-if(!empty($for_who)): 
-
-$title = $for_who['title'];
-$description = $for_who['description'];
-$for_who_item = $for_who['for_who_item'];
+if ($the_query->have_posts()):
 
 $count = 1;
+$for_who_section = get_field('for_who_section')
 
 ?>
 
 <section class="for-who">
     <div class="container">
-      <h2><?php echo $title; ?></h2>
+      <?php if (!empty($for_who_section['title'])): ?>
+      <h2><?php echo $for_who_section['title']; ?></h2>
+      <?php endif; ?>
       
-      <p><?php echo $description; ?></p>
+      <?php if (!empty($for_who_section['description'])): ?>
+      <p><?php echo $for_who_section['description']; ?></p>
+      <?php endif; ?>
     
       <div class="for-who-infos">
         <ul class="left scrollbar-styled">
-          <?php foreach($for_who_item as $item) : ?>
+          <?php
+          while ($the_query->have_posts()) :
+              $the_query->the_post();
+
+          $for_who_call = get_field("for_who_call");
+          ?>
           <li>  
             <a href="#forWhoCard<?php echo $count ?>" class="info-choice <?php echo $count == "1" ? "selected" : ''; ?>">
               <div class="container-icon">
-                <?php if (!empty($item['icon'])): ?>
-                <img src="<?php echo $item['icon']['url']; ?>" alt="<?php echo $item['icon']['alt']; ?>">
+                <?php if (!empty($for_who_call['icon'])): ?>
+                <img src="<?php echo $for_who_call['icon']['url']; ?>" alt="<?php echo $for_who_call['icon']['alt']; ?>">
                 <?php endif; ?>
               </div>
               
-              <?php if (!empty($item['title'])): ?>
-              <h3><?php echo $item['title']; ?></h3>
+              <?php if (!empty($for_who_call['interested_party'])): ?>
+              <h3><?php echo $for_who_call['interested_party']; ?></h3>
               <?php endif; ?>
             </a>
           </li>
 
-          <?php $count++  ?>
-          <?php endforeach; ?>
+        <?php $count++; endwhile; ?>
         </ul>
 
-        <?php $count = 1  ?>
+        <?php $count = 1; ?>
 
         <div class="right">
-          <?php foreach($for_who_item as $item) : ?>
+          <?php
+          while ($the_query->have_posts()) :
+              $the_query->the_post();
+
+          $for_who_call = get_field("for_who_call");
+          ?>
           <div class="for-who-card" id="forWhoCard<?php echo $count ?>">
 
-            <?php if (!empty($item['image'])): ?>
+            <?php if (!empty($for_who_call['thumbnail'])): ?>
             <figure>
-              <img class="cover" src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>">
+              <img class="cover" src="<?php echo $for_who_call['thumbnail']['url']; ?>" alt="<?php echo $item['thumbnail']['alt']; ?>">
             </figure>
             <?php endif; ?>
 
             <div class="info-text">
-              <?php if (!empty($item['description'])): ?>
-              <p><?php echo $item['description']; ?></p>
+              <?php if (!empty($for_who_call['synopsis'])): ?>
+              <p><?php echo $for_who_call['synopsis']; ?></p>
               <?php endif; ?>
             
-              <?php if (!empty($item['link'])): ?>
-              <a href="<?php echo $item['link']['url']; ?>" class="btn-secondary" target="<?php echo $item['link']['target']; ?>">
-                <?php echo $item['link']['title']; ?>
+              <a href="<?php the_permalink(); ?>" class="btn-secondary">
+                Saiba mais
                 <?php get_icon('arrow-right') ?>
               </a>
-              <?php endif; ?>
             </div>
           </div>
 
-          <?php $count++  ?>
-          <?php endforeach; ?>
+          <?php $count++; endwhile; ?>
         </div>
       </div>
     </div>
   </section>
-  <?php endif; ?>
+<?php endif; wp_reset_postdata(); ?>
