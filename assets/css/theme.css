@@ -120,6 +120,10 @@ address {
   font-style: normal;
 }
 
+cite {
+  font-style: normal;
+}
+
 body {
   font-family: var(--primary-font);
   color: var(--primary-font-color);
@@ -132,6 +136,15 @@ body {
     margin-top: 6.4rem;
   }
 }
+section {
+  padding: 6rem 0;
+}
+@media (max-width: 1024px) {
+  section {
+    padding: 3.2rem 0;
+  }
+}
+
 h2 {
   font-weight: 500;
   font-size: 3rem;
@@ -368,6 +381,26 @@ p:not(:last-of-type) {
   align-self: flex-end;
 }
 
+.btn-play {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.1rem;
+  height: 6.1rem;
+  background-color: white;
+  z-index: 2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btn-play svg {
+  margin-left: 0.7rem;
+  margin-top: 0.1rem;
+}
+
 .container {
   width: 100%;
   max-width: 100%;
@@ -514,6 +547,33 @@ p:not(:last-of-type) {
 
 .scrollbar-styled::-webkit-scrollbar-thumb {
   background-color: #181717;
+}
+
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(25, 25, 24, 0.8);
+  z-index: 99;
+}
+.lightbox-modal button {
+  all: unset;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+.lightbox-modal svg {
+  color: white;
+  scale: 2.5;
+  transform-origin: left;
 }
 
 .swiper > .container {
@@ -1520,33 +1580,6 @@ p:not(:last-of-type) {
     line-height: 1.8rem;
     margin-top: 0.8rem;
   }
-}
-.section-video .container-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: none;
-  visibility: hidden;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(25, 25, 24, 0.8);
-  z-index: 99;
-}
-.section-video .container-video.open {
-  display: flex;
-  visibility: visible;
-}
-.section-video .container-video svg {
-  color: white;
-  scale: 2.5;
-}
-.section-video .container-video .container-close-btn {
-  position: absolute;
-  top: 2rem;
-  right: 4rem;
-  cursor: pointer;
 }
 
 .section-evaluation {
@@ -2732,6 +2765,7 @@ p:not(:last-of-type) {
   flex-direction: column;
   gap: 1.5rem;
   padding: 10.2rem 19.5rem 4.2rem 4.6rem;
+  height: 100%;
 }
 @media (max-width: 1024px) {
   .section-for-who-items .for-who-items-card > a {
@@ -2799,6 +2833,130 @@ p:not(:last-of-type) {
   .section-for-who-items .for-who-items-card span {
     font-size: 1.4rem;
     line-height: 1.8rem;
+  }
+}
+
+.section-testimonies h2 {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3.8rem;
+  max-width: 34.5rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies h2 {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+}
+@media (max-width: 450px) {
+  .section-testimonies h2 {
+    max-width: 20.4rem;
+  }
+}
+.section-testimonies .slide-testimonies {
+  margin-top: 1.9rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies {
+    margin-top: -3.1rem;
+  }
+}
+.section-testimonies .slide-testimonies > .container {
+  padding: 0;
+  justify-content: flex-end;
+}
+.section-testimonies .slide-testimonies .testimonial-card {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card {
+    flex-direction: column-reverse;
+  }
+}
+.section-testimonies .slide-testimonies .testimonial-card blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  border: 0.1rem solid var(--border-color);
+  border-right: none;
+  padding: 0 2.8rem 0 4.8rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card blockquote {
+    border-right: 0.1rem solid var(--border-color);
+    border-top: none;
+    padding: 2.4rem;
+    gap: 1.7rem;
+  }
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card blockquote svg {
+    scale: 0.67;
+    width: max-content;
+    height: max-content;
+  }
+}
+.section-testimonies .slide-testimonies .testimonial-card blockquote p {
+  font-size: 2.3rem;
+  line-height: 3rem;
+  color: var(--primary-font-color);
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card blockquote p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+}
+.section-testimonies .slide-testimonies .testimonial-card blockquote hr {
+  width: 2.8rem;
+  height: 0.1rem;
+  background: var(--primary-font-color);
+  border: none;
+}
+.section-testimonies .slide-testimonies .testimonial-card blockquote cite {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card blockquote cite {
+    gap: 1.6rem;
+  }
+}
+.section-testimonies .slide-testimonies .testimonial-card blockquote cite strong {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3.7rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card blockquote cite strong {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}
+.section-testimonies .slide-testimonies .testimonial-card blockquote cite span {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card blockquote cite span {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+}
+.section-testimonies .slide-testimonies .testimonial-card .right {
+  position: relative;
+  flex-shrink: 0;
+}
+.section-testimonies .slide-testimonies .testimonial-card .right figure {
+  width: 45.2rem;
+  height: 64.5rem;
+}
+@media (max-width: 1024px) {
+  .section-testimonies .slide-testimonies .testimonial-card .right figure {
+    width: 100%;
+    height: 44.6rem;
   }
 }
 

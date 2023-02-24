@@ -8,9 +8,11 @@ $video = get_field('video')
 <section class="section-video">
     <div class="container">
         <div class="container-thumbnail">
-            <div class="container-play">
+            <?php if (!empty($video['video_link'])): ?>
+            <div class="container-play" data-iframe-src='<?php echo $video['video_link']; ?>'>
                 <?php get_icon('play') ?>
             </div>
+            <?php endif; ?>
 
             <?php if (!empty($video['thumbnail'])): ?>
             <figure>
@@ -30,14 +32,6 @@ $video = get_field('video')
             <a href="<?php echo $video['link']['url']; ?>" target="<?php echo $video['link']['target']; ?>"><?php echo $video['link']['title']; ?> <?php get_icon('arrow-right') ?></a>
             <?php endif; ?>
         </div>
-        
-        <?php if (!empty($video['video_link'])): ?>
-        <div class="container-video" data-iframe-src='<?php echo $video['video_link']; ?>'>
-            <div class="container-close-btn">
-                <?php get_icon('close') ?>
-            </div>
-        </div>
-        <?php endif; ?>
     </div>
 </section>
 <?php endif; ?>

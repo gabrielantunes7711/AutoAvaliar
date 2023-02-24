@@ -9,3 +9,10 @@ body {
     margin-top: 6.4rem;
   }
 }
+section {
+  padding: 6rem 0;
+
+  @media (max-width: 1024px) {
+    padding: 3.2rem 0;
+  }
+}

@@ -99,35 +99,4 @@
       }
     }
   }
-
-  .container-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    visibility: hidden;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(25, 25, 24, 0.8);
-    z-index: 99;
-
-    &.open {
-      display: flex;
-      visibility: visible;
-    }
-
-    svg {
-      color: white;
-      scale: 2.5;
-    }
-
-    .container-close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 4rem;
-      cursor: pointer;
-    }
-  }
 }
