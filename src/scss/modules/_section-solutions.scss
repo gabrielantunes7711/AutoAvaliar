@@ -1,10 +1,18 @@
 .section-solutions {
-  padding: 5.7rem 0;
   background-color: var(--primary-background-color);
 
-  @media (max-width: 550px) {
-    & > .container {
-      p {
+  & > .container {
+    h2 {
+      @media (max-width: 580px) {
+        max-width: 34.5rem;
+      }
+
+      @media (max-width: 480px) {
+        max-width: 20.8rem;
+      }
+    }
+    p {
+      @media (max-width: 550px) {
         max-width: 21.1rem;
       }
     }

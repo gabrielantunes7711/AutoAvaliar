@@ -149,6 +149,7 @@ h2 {
   font-weight: 500;
   font-size: 3rem;
   line-height: 3.7rem;
+  max-width: 45.4rem;
 }
 @media (max-width: 1024px) {
   h2 {
@@ -162,6 +163,7 @@ p {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 2.3rem;
+  max-width: 36.8rem;
 }
 p:not(:last-of-type) {
   margin-bottom: 2rem;
@@ -1296,8 +1298,17 @@ p:not(:last-of-type) {
 }
 
 .section-solutions {
-  padding: 5.7rem 0;
   background-color: var(--primary-background-color);
+}
+@media (max-width: 580px) {
+  .section-solutions > .container h2 {
+    max-width: 34.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .section-solutions > .container h2 {
+    max-width: 20.8rem;
+  }
 }
 @media (max-width: 550px) {
   .section-solutions > .container p {
